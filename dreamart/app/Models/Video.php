@@ -2,22 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
-{
-    use HasFactory;
-
+class Video extends Model {
 
     /**
-     * The attributes that are mass assignable.
+     * The table associated with the model.
      *
+     * @var string
+     */
+    protected $table = 'video';
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
+    /**
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['slug', 'title', 'author', 'url','views','rating'];
+
 }
