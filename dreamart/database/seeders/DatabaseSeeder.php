@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PlansSeeder::class,
             RoleSeeder::class,
             TaxonomySeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }
