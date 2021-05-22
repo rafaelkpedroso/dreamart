@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PlansSeeder::class,
             RoleSeeder::class,
+            TaxonomySeeder::class,
         ]);
     }
 }
