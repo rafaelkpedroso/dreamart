@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'login-page', 'page' => __('Reset password'), 'contentClass' => 'login-page'])
+@extends('admin.layouts.app', ['class' => 'login-page', 'page' => __('Reset password'), 'contentClass' => 'login-page'])
 
 @section('content')
     <div class="col-lg-5 col-md-7 ml-auto mr-auto">
@@ -11,7 +11,7 @@
                     <h1 class="card-title">{{ __('Reset password') }}</h1>
                 </div>
                 <div class="card-body">
-                    @include('alerts.success')
+                    @include('admin.alerts.success')
 
                     <input type="hidden" name="token" value="{{ $token }}">
 

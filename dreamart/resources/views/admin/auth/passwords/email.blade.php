@@ -11,7 +11,7 @@
                     <h1 class="card-title">{{ __('Reset password') }}</h1>
                 </div>
                 <div class="card-body">
-                    @include('alerts.success')
+                    @include('admin.alerts.success')
 
                     <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                         <div class="input-group-prepend">

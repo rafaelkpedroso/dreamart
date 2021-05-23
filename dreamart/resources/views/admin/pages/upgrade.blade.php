@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Upgrade'), 'pageSlug' => 'upgrade'])
+@extends('admin.layouts.app', ['page' => __('Upgrade'), 'pageSlug' => 'upgrade'])
 
 @section('content')
 <div class="row">
