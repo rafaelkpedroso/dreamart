@@ -8,7 +8,7 @@
         </div>
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
-                <a href="{{ route('home') }}">
+                <a href="{{ route('admin') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('Dashboard') }}</p>
                 </a>
@@ -51,8 +51,8 @@
             </li>
 
 
-            <li @if ($pageSlug == 'maps') class="active " @endif>
-                <a href="{{ route('pages.maps') }}">
+            <li @if ($pageSlug == 'taxonomy') class="active " @endif>
+                <a href="{{ route('admin.taxonomy') }}">
                     <i class="tim-icons icon-molecule-40"></i>
                     <p>Taxonomia</p>
                 </a>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,12 @@ use App\Http\Controllers\VideoController;
 |
 */
 
-Route::get('/', function () { return view('welcome'); });
-
-// Videos
-Route::get('video/play/{slug}', [VideoController::class, 'play']);
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
@@ -43,3 +39,15 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+
+
+
+
+// Conteúdos
+Route::get('/', [WebsiteController::class, 'home']);
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('admin/taxonomy', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@index']);
+});
+Route::get('video/play/{slug}', [VideoController::class, 'play']);

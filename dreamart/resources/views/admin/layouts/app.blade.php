@@ -38,7 +38,7 @@
                 @csrf
             </form>
         @else
-            @include('layouts.navbars.navbar')
+            @include('admin.layouts.navbars.navbar')
             <div class="wrapper wrapper-full-page">
                 <div class="full-page {{ $contentClass ?? '' }}">
                     <div class="content">
