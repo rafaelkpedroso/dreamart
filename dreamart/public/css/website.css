@@ -1,0 +1,669 @@
+body{
+    background-color: black;
+    color: #ffffff;
+    height: 100%;
+    overflow-x: hidden;
+    white-space: normal;
+    outline: none;
+}
+.content{
+}
+hr{
+    color: #fb792c;
+    height: 2px;
+    opacity: 1;
+    margin: 80px 0px;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+p{
+    white-space: normal;
+}
+
+footer, footer a:link, footer a:visited, footer a:hover, footer a:active {
+    color: white;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+}
+footer ol li{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+}
+footer .orangeblock .container .row div{
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btnorange{
+    background-color: #fb792c;
+    padding: 4px 40px;
+    border: none;
+    font-weight: bold;
+    border-radius: 0px;
+    color: black;
+}
+.orange{
+    color: #fb792c;
+}
+.title{
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 36px;
+    white-space: normal;
+}
+.ulorange li{
+    list-style: none; /* Remove default bullets */
+    margin-bottom: 20px;
+}
+
+.ulorange li:before{
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #fb792c; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.2em; /* Also needed for space (tweak if needed) */
+    font-size: 30px;
+}
+.orangeblock{
+    background-color: #fb792c; /* Change the color */
+    padding: 40px 0px;
+}
+
+
+/* nav */
+nav{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    top:0px;
+    left: 0px;
+    margin-top: 120px;
+    border-right: solid 1px #fb792c;
+    background-color: #232323;
+    color: #4a4a4a;
+    margin-left: -200px;
+
+}
+nav ul{
+    padding: 0px;
+    margin: 0px;
+}
+nav ul li{
+    list-style: none;
+    padding:20px 30px;
+    border-bottom: solid 1px #181818;
+    color: #616161;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 18px;
+    background-color: #232323;
+    -webkit-transition: background 1s; /* For Safari 3.0 to 6.0 */
+    transition: background 1s; /* For modern browsers */
+    cursor: pointer;
+}
+nav ul li:hover{
+    background: rgb(255,139,0);
+
+}
+nav ul li a:link, nav ul li a:visited, nav ul li a:active {
+    color: #616161;
+}
+nav ul li img{
+    margin-right: 10px;
+}
+#hamburguer{
+    cursor: pointer;
+}
+
+
+/* buttons */
+.btnorange a:link, a:visited, a:hover, a:active {
+    color: #000;
+}
+.button-secondary{
+    color: white !important;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 100;
+    border: solid 1px orange;
+    border-radius: 31px;
+    padding: 8px 26px;
+    margin-top: 40px;
+    display: block;
+    width: fit-content;
+    font-size: 12px;
+}
+
+
+
+
+
+/* carossel full */
+.carousel-full{
+    height: 100%;
+    width: 100%;
+}
+.carousel-full .carousel-full-container{
+    height: 100%;
+    width: 100%;
+}
+.carousel-full .carousel-full-container ol {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-height: 100vh;
+    white-space: nowrap;
+}
+.carousel-full .carousel-full-container ol li{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    list-style: none;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: inline-flex;
+}
+.carousel-full .carousel-full-container ol li.active{
+
+
+}
+.carousel-full .carousel-full-nav{
+    text-align: center;
+    margin-top: -160px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.carousel-full .carousel-full-nav ol li{
+    border: solid 1px white;
+    list-style: none;
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+}
+.carousel-full .carousel-full-nav ol li:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}
+.carousel-full .carousel-full-nav ol li.active{
+     border: solid 1px #fb792c;
+ }
+
+
+
+
+/* carossel text */
+.carousel-text{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.carousel-text .carousel-text-container{
+    width: 100%;
+}
+.carousel-text .carousel-text-container ol {
+    width: 100%;
+    padding: 0px;
+    overflow-x: scroll;
+    max-height: 100vh;
+}
+.carousel-text .carousel-text-container ol li{
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 40vh;
+    list-style: none;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: none;
+}
+.carousel-text .carousel-text-container ol li.active{
+    display: flex;
+}
+.carousel-text .carousel-text-nav{
+    text-align: left;
+    margin-top: -160px;
+}
+.carousel-text .carousel-text-nav ol{
+    margin: 0px;
+    padding: 0px;
+}
+.carousel-text .carousel-text-nav ol li{
+    border: solid 1px white;
+    list-style: none;
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+}
+.carousel-text .carousel-text-nav ol li:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}
+.carousel-text .carousel-text-nav ol li.active{
+     border: solid 1px #fb792c;
+ }
+
+.carousel-text .carousel-text-left{
+    position: absolute;
+    left: -120px;
+    top: 50%;
+    transform: translate(-50%, 0);
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+}
+.carousel-text .carousel-text-left:hover {
+    transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.carousel-text .carousel-text-right{
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translate(-50%, 0);
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+}
+.carousel-text .carousel-text-right:hover {
+    transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+/* carossel depoimentos */
+.carousel-depoimentos{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.carousel-depoimentos .carousel-depoimentos-container{
+    width: 100%;
+}
+.carousel-depoimentos .carousel-depoimentos-container ol {
+    width: 100%;
+    padding: 0px;
+    overflow-x: scroll;
+    max-height: 100vh;
+}
+.carousel-depoimentos .carousel-depoimentos-container ol li{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 40vh;
+    list-style: none;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+
+}
+.carousel-depoimentos .carousel-depoimentos-container ol li.active{
+    display: block;
+}
+.carousel-depoimentos .carousel-depoimentos-nav{
+    text-align: center;
+    margin-top: -40px;
+}
+.carousel-depoimentos .carousel-depoimentos-nav ol{
+    margin: 0px;
+    padding: 0px;
+}
+.carousel-depoimentos .carousel-depoimentos-nav ol li{
+    border: solid 1px white;
+    list-style: none;
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+}
+.carousel-depoimentos .carousel-depoimentos-nav ol li:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}
+.carousel-depoimentos .carousel-depoimentos-nav ol li.active{
+    border: solid 1px #fb792c;
+}
+
+.carousel-depoimentos .carousel-depoimentos-left{
+    position: absolute;
+    left: -120px;
+    top: 50%;
+    transform: translate(-50%, 0);
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+}
+.carousel-depoimentos .carousel-depoimentos-left:hover {
+    transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.carousel-depoimentos .carousel-depoimentos-right{
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translate(-50%, 0);
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+}
+.carousel-depoimentos .carousel-depoimentos-right:hover {
+    transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.carousel-depoimentos .depoimento{
+    position: relative;
+    padding:40px 40px 0px 40px;
+}
+.carousel-depoimentos .depoimento .depoimento-quote-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+}
+.carousel-depoimentos .depoimento .depoimento-quote-right{
+    position: absolute;
+    bottom: 0px;
+    right: 0px
+}
+
+
+    /* accordin do faq */
+.dreamart-accordion{ }
+.dreamart-accordion li{
+    list-style: none;
+}
+.dreamart-accordion li p{
+    color: white !important;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 100;
+    border: solid 1px orange;
+    border-radius: 10px;
+    padding: 12px 26px;
+    margin-top: 40px;
+    display: block;
+    font-size: 12px;
+}
+.dreamart-accordion li p i{
+    background-image: url('/img/arrow-down.png');
+    display: block;
+    float: right;
+    width: 28px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.dreamart-accordion li.active p i{
+    background-image: url('/img/arrow-up.png');
+}
+.dreamart-accordion li span{
+    display: none;
+}
+.dreamart-accordion li.active span{
+    padding: 40px;
+    display: block;
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+
+/* modal */
+.modal{
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+}
+
+.modal-x{
+    border:solid 1px darkgrey;
+    background: darkslategray;
+    border-radius: 30px;
+    height: 28px;
+    width: 28px;
+    color: white;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    z-index: 999999;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+}
+.modal-content{
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100%;
+    background-color: unset;
+}
+
+
+
+
+/* geral */
+
+header{
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 14px;
+    color: white;
+    background: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    height: 120px;
+
+}
+header .container{
+    position: relative;
+}
+header #logo{
+    background-image: url('/img/dreamart-logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    text-indent: -999999999px;
+    background-position: left;
+}
+
+header #searchcontainer{
+    position: relative;
+}
+
+header #search{
+    background-color: black;
+    border: solid 1px #fb792c;
+    border-radius: 20px;
+    padding: 8px 8px 8px 48px;
+    width: 60%;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    outline: none;
+}
+
+header #menucontainer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+header  .profilepic{
+    background: #fb792c;
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url(/img/jiujiteiro.png);
+    background-size: cover;
+}
+header #menucontainer .search{
+    background-image: url('/img/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+header #menucontainer .hamburguer{
+    background-image: url('/img/hamburguer-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+/* home */
+
+section#video-manifest{
+    background-image: url('/img/bg004.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section#video-manifest .btnplay{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: transform .2s; /* Animation */
+    cursor: pointer;
+}
+section#video-manifest .btnplay:hover {
+    transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+section#conheca-o-time{
+    background-image: url('/img/bg005.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section#consultoria .consultoria-bg{
+    background-image: url('/img/bg006.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: unset;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section#como-funciona{
+    background: rgb(255,139,0);
+    background: linear-gradient(180deg, rgba(255,139,0,1) 0%, rgba(230,113,16,1) 100%);
+    height: 50vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+}
+section#como-funciona .title{
+    color: white;
+    padding-bottom: 30px;
+}
+
+
+section#faq{
+    min-height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section#faq #ppd-container{}
+section#faq #ppd-container .row{
+    border-top: solid 1px #626262;
+    border-bottom: solid 1px #626262;
+    min-height: 80px;
+    color: #626262;
+    font-size: 14px;
+}
+section#faq .ppd-bolinha{
+    width: 10px;
+    height: 10px;
+    background-color: #fb792c;
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    border-radius: 20px;
+    min-width: 3px;
+    display: block;
+    padding: 0;
+}
+section#faq #ppd-container .row span{
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 18px;
+    color: white;
+}
+section#faq #ppd-container .row .ppd-gray{
+    background: lightgray;
+}

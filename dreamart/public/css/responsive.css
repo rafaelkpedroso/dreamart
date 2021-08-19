@@ -1,0 +1,46 @@
+
+@media only screen  and (max-width : 980px) {
+    /* Styles */
+    .carousel-text .carousel-text-left {
+        position: absolute;
+        left: 10px;
+        bottom: -100px;
+        transform: translate(-50%, 0);
+        transition: transform .2s;
+        cursor: pointer;
+    }
+    .carousel-text .carousel-text-right {
+        position: absolute;
+        left: 60px;
+        bottom: 0px;
+        transform: translate(-50%, 0);
+        transition: transform .2s;
+        cursor: pointer;
+    }
+    .carousel-full .carousel-full-nav{
+        margin-top: -46px;
+    }
+
+    #video-manifest .title{
+        margin-bottom: 400px;
+    }
+
+    .carousel-text{
+      position: absolute;
+    }
+    #searchcontainer{
+        display: none;
+    }
+    .profile{
+        position: absolute;
+        top: 21px;
+        right: 20px;
+    }
+
+    #consultoria{
+        display: none !important;
+    }
+    #como-funciona{
+        display: none !important;
+    }
+}
