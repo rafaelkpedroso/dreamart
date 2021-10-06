@@ -52,7 +52,7 @@
 
 
             <li @if ($pageSlug == 'taxonomy') class="active " @endif>
-                <a href="{{ route('admin.taxonomy') }}">
+                <a href="/admin/taxonomy">
                     <i class="tim-icons icon-molecule-40"></i>
                     <p>Taxonomia</p>
                 </a>

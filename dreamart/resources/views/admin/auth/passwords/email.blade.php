@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
-                        @include('alerts.feedback', ['field' => 'email'])
+                        @include('admin.alerts.feedback', ['field' => 'email'])
                     </div>
                 </div>
                 <div class="card-footer">

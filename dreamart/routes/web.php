@@ -61,5 +61,6 @@ Route::get('/busca/', [WebsiteController::class, 'busca']);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/taxonomy', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@index']);
+    Route::get('admin/taxonomy/edit/{id}', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@edit']);
 });
 Route::get('video/play/{slug}', [VideoController::class, 'play']);
