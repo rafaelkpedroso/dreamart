@@ -16,6 +16,21 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        return view('users.index', ['users' => $model->paginate(15)]);
+        $users = User::all();
+
+        $tablevars['sortable'] = 'name';
+
+        return view('admin.users.index', ['users' => $users]);
+        
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.users.add');
     }
 }

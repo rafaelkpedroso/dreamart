@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Video;
+use App\Models\Taxonomy;
+use Illuminate\Http\Request;
+
 use PhpParser\Node\Expr\Cast\Object_;
 
 class VideoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    }
 
     /**
      * Display a listing of the resource.
@@ -35,6 +30,28 @@ class VideoController extends Controller
         return view('public.video.play', $data);
     }
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+
+        if(!$request->get('busca')){
+            $data = Video::all();
+        } else{
+            $data = Video::where('title','LIKE', ('%'.$request->get('busca').'%'))->get();
+        }
+
+
+        $tablevars['sortable'] = 'title';
+        return view('admin.videos.index', ['data' => $data]);
+
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +59,10 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        $authors = User::get();
+        $taxonomies = Taxonomy::get();
+
+        return view('admin.videos.add', ['authors' => $authors, 'taxonomies' => $taxonomies]);
     }
 
     /**
@@ -53,7 +73,8 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $video = Video::create($request->all());
+        var_dump($video);
     }
 
     /**

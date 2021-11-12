@@ -22,8 +22,8 @@
 
                 <div class="collapse show" id="content-menu">
                     <ul class="nav pl-4">
-                        <li @if ($pageSlug == 'profile') class="active " @endif>
-                            <a href="{{ route('profile.edit')  }}">
+                        <li @if ($pageSlug == 'videos') class="active " @endif>
+                            <a href="{{ route('videos.index')  }}">
                                 <i class="tim-icons icon-video-66"></i>
                                 <p>Vídeos</p>
                             </a>
@@ -59,7 +59,7 @@
             </li>
 
             <li @if ($pageSlug == 'maps') class="active " @endif>
-                <a href="{{ route('pages.maps') }}">
+                <a href="/admin/users">
                     <i class="tim-icons icon-single-02"></i>
                     <p>Usuários</p>
                 </a>

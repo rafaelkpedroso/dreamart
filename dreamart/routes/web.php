@@ -60,6 +60,16 @@ Route::get('/busca/', [WebsiteController::class, 'busca']);
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/admin/users', ['as' => 'users.index', 'uses' => 'App\Http\Controllers\UserController@index']);
+    Route::get('/admin/users/add', ['as' => 'users.create', 'uses' => 'App\Http\Controllers\UserController@create']);
+    Route::post('/admin/users/store', ['as' => 'users.store', 'uses' => 'App\Http\Controllers\UserController@store']);
+
+    Route::get('/admin/videos', ['as' => 'videos.index', 'uses' => 'App\Http\Controllers\VideoController@index']);
+    Route::get('/admin/videos/add', ['as' => 'videos.create', 'uses' => 'App\Http\Controllers\VideoController@create']);
+    Route::put('/admin/videos/store', ['as' => 'videos.store', 'uses' => 'App\Http\Controllers\VideoController@store']);
+
+
     Route::get('admin/taxonomy', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@index']);
     Route::get('admin/taxonomy/edit/{id}', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@edit']);
 });

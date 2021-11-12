@@ -1,4 +1,4 @@
-@extends('admin.layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'profile'])
+@extends('admin.layouts.app', ['page' => __('Vídeos'), 'pageSlug' => 'videos'])
 
 @section('content')
     <div class="row">
@@ -10,16 +10,16 @@
 
                         <!-- Title -->
                         <div class="col-4">
-                            <h4 class="card-title">Users</h4>
+                            <h4 class="card-title">Vídeos</h4>
                         </div>
 
                         <!-- Form -->
                         <div class="col-8 text-right">
-                            <a href="/admin/users/add" class="btn btn-sm btn-primary">Inserir</a>
+                            <a href="/admin/videos/add" class="btn btn-sm btn-primary">Inserir</a>
                             <form style="    width: fit-content; display: contents;">
                                 <input type="text"
                                        name="busca"
-                                       value="Buscar"
+                                       placeholder="Buscar"
                                        style="background-color: #1F1E29; color: lightgray; border: solid 1px black; padding: 5px; " />
 
                                 <img src="/img/search-icon.png" />
@@ -38,30 +38,25 @@
                             <thead class=" text-primary">
                                 <tr>
                                     <th scope="col" class="sortable" data-column="name" data-order="asc">
-                                        Nome
+                                        Título
                                         <i class="arrow up"></i>
                                     </th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col"></th>
                                 </tr>
                             </thead>
 
                             <!-- table body -->
                             <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($data as $row)
                                 <tr>
-                                    <td>{{$user['name']}}</td>
-                                    <td>
-                                        <a href="{{$user['email']}}">{{$user['email']}}</a>
-                                    </td>
+                                    <td>{{$row['title']}}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/users/edit/{{$user['id']}}">Editar</a>
-                                                <a class="dropdown-item" href="/users/delete/{{$user['id']}}">Excluir</a>
+                                                <a class="dropdown-item" href="/users/edit/{{$row['id']}}">Editar</a>
+                                                <a class="dropdown-item" href="/users/delete/{{$row['id']}}">Excluir</a>
                                             </div>
                                         </div>
                                     </td>
@@ -78,7 +73,7 @@
                     <nav class="d-flex justify-content-end" aria-label="...">
 
                         <!-- paginate -->
-                        <ul class="paginator">
+                        <!--ul class="paginator">
                             <li class="paginate-left">
                                 <i class="arrow left"></i>
                             </li>
@@ -90,7 +85,7 @@
                             <li class="paginate-right">
                                 <i class="arrow right"></i>
                             </li>
-                        </ul>
+                        </ul-->
 
                     </nav>
                 </div>
