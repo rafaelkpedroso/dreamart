@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Editar Taxonomia') }}</h5>
                 </div>
-                <form method="post" action="/admin/taxonomy/update/{{$taxonomy->slug}}" autocomplete="off">
+                <form method="post" action="/admin/taxonomy/store" autocomplete="off">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -18,11 +18,11 @@
                                 <label>{{ __('Pai') }}</label>
 
                                 <select name="father" class="form-control{{ $errors->has('father') ? ' is-invalid' : '' }}">
-                                    <option value="">Nenhum</option>
+                                    <option value="" selected>Nenhum</option>
                                     @foreach($pais as $pai)
                                         <option
                                                 value="{{ $pai->slug }}"
-                                                {{ ( (old('father', $taxonomy->father) == $pai->slug) ? 'selected' : '') }}>
+                                                >
                                             {{ $pai->name }}
                                         </option>
                                     @endforeach
@@ -34,13 +34,13 @@
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Nome') }}</label>
-                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" value="{{ old('name', $taxonomy->name) }}" required>
+                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" required>
                                 @include('admin.alerts.feedback', ['field' => 'name'])
                             </div>
 
                             <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">
                                 <label>{{ __('Slug') }}</label>
-                                <input type="slug" name="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" placeholder="{{ __('Slug') }}" value="{{ old('slug', $taxonomy->slug) }}" required>
+                                <input type="slug" name="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" placeholder="{{ __('Slug') }}" required>
                                 @include('admin.alerts.feedback', ['field' => 'slug'])
 
                             </div>

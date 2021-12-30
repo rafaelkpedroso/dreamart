@@ -17,6 +17,9 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Taxonomia</h4>
             <p class="card-category">Lista de termos e categorias para usar na listagem de conteúdos (como vídeos, podcasts e lives)</p>
+
+
+            <a href="/admin/taxonomy/add" class="btn btn-sm btn-primary">Inserir</a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -28,7 +31,7 @@
                     <h3>
                       {{$taxonomy1['name']}}
                       <a href="/admin/taxonomy/edit/{{$taxonomy1['slug']}}"><i class="tim-icons icon-pencil"></i></a>
-                      <a href="/admin/taxonomy/delete/{{$taxonomy1['slug']}}"><i class="tim-icons icon-trash-simple"></i></a>
+                      <a class="deletebutton" href="/admin/taxonomy/delete/{{$taxonomy1['slug']}}"><i class="tim-icons icon-trash-simple"></i></a>
                     </h3>
 
                       @if (is_Array($taxonomy1['sons']) && count($taxonomy1['sons']) > 0)
@@ -37,7 +40,7 @@
                             <li>
                               {{$taxonomy2['name']}}
                               <a href="/admin/taxonomy/edit/{{$taxonomy2['slug']}}"><i class="tim-icons icon-pencil"></i></a>
-                              <a href="/admin/taxonomy/delete/{{$taxonomy2['slug']}}"><i class="tim-icons icon-trash-simple"></i></a>
+                              <a class="deletebutton" href="/admin/taxonomy/delete/{{$taxonomy2['slug']}}"><i class="tim-icons icon-trash-simple"></i></a>
                             </li>
                         @endforeach
                         </ul>
@@ -57,3 +60,23 @@
   </div>
 </div>
 @endsection
+@push('js')
+  <script>
+    $(document).ready(function(){
+
+      $(".deletebutton").click(function(e){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+
+        var link =  $(this).attr('href');
+
+
+        if(confirm('Confirma a exclusão deste registro?')){
+          window.location.href = link;
+        }
+
+      });
+
+    });
+  </script>
+@endpush

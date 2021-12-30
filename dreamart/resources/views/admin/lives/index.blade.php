@@ -1,4 +1,4 @@
-@extends('admin.layouts.app', ['page' => __('Vídeos'), 'pageSlug' => 'videos'])
+@extends('admin.layouts.app', ['page' => __('Lives'), 'pageSlug' => 'lives'])
 
 @section('content')
     <div class="row">
@@ -10,12 +10,12 @@
 
                         <!-- Title -->
                         <div class="col-4">
-                            <h4 class="card-title">Vídeos</h4>
+                            <h4 class="card-title">Lives</h4>
                         </div>
 
                         <!-- Form -->
                         <div class="col-8 text-right">
-                            <a href="/admin/videos/add" class="btn btn-sm btn-primary">Inserir</a>
+                            <a href="/admin/lives/add" class="btn btn-sm btn-primary">Inserir</a>
                             <form style="    width: fit-content; display: contents;">
                                 <input type="text"
                                        name="busca"
@@ -56,8 +56,8 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/admin/videos/edit/{{$row['id']}}">Editar</a>
-                                                <a class="dropdown-item deletebutton" href="/admin/videos/delete/{{$row['id']}}">Excluir</a>
+                                                <a class="dropdown-item" href="/admin/lives/edit/{{$row['id']}}">Editar</a>
+                                                <a class="dropdown-item deletebutton" href="/admin/lives/delete/{{$row['id']}}">Excluir</a>
                                             </div>
                                         </div>
                                     </td>

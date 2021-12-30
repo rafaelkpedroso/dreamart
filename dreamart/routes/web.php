@@ -68,9 +68,30 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/videos', ['as' => 'videos.index', 'uses' => 'App\Http\Controllers\VideoController@index']);
     Route::get('/admin/videos/add', ['as' => 'videos.create', 'uses' => 'App\Http\Controllers\VideoController@create']);
     Route::put('/admin/videos/store', ['as' => 'videos.store', 'uses' => 'App\Http\Controllers\VideoController@store']);
+    Route::get('/admin/videos/delete/{id}', ['as' => 'videos.delete', 'uses' => 'App\Http\Controllers\VideoController@destroy']);
+    Route::get('/admin/videos/edit/{id}', ['as' => 'videos.edit', 'uses' => 'App\Http\Controllers\VideoController@edit']);
+    Route::put('/admin/videos/update/{id}', ['as' => 'videos.update', 'uses' => 'App\Http\Controllers\VideoController@update']);
+
+    Route::get('/admin/podcasts', ['as' => 'podcasts.index', 'uses' => 'App\Http\Controllers\PodcastController@index']);
+    Route::get('/admin/podcasts/add', ['as' => 'podcasts.create', 'uses' => 'App\Http\Controllers\PodcastController@create']);
+    Route::put('/admin/podcasts/store', ['as' => 'podcasts.store', 'uses' => 'App\Http\Controllers\PodcastController@store']);
+    Route::get('/admin/podcasts/delete/{id}', ['as' => 'podcasts.delete', 'uses' => 'App\Http\Controllers\PodcastController@destroy']);
+    Route::get('/admin/podcasts/edit/{id}', ['as' => 'podcasts.edit', 'uses' => 'App\Http\Controllers\PodcastController@edit']);
+    Route::put('/admin/podcasts/update/{id}', ['as' => 'podcasts.update', 'uses' => 'App\Http\Controllers\PodcastController@update']);
+
+    Route::get('/admin/lives', ['as' => 'lives.index', 'uses' => 'App\Http\Controllers\LiveController@index']);
+    Route::get('/admin/lives/add', ['as' => 'lives.create', 'uses' => 'App\Http\Controllers\LiveController@create']);
+    Route::put('/admin/lives/store', ['as' => 'lives.store', 'uses' => 'App\Http\Controllers\LiveController@store']);
+    Route::get('/admin/lives/delete/{id}', ['as' => 'lives.delete', 'uses' => 'App\Http\Controllers\LiveController@destroy']);
+    Route::get('/admin/lives/edit/{id}', ['as' => 'lives.edit', 'uses' => 'App\Http\Controllers\LiveController@edit']);
+    Route::put('/admin/lives/update/{id}', ['as' => 'lives.update', 'uses' => 'App\Http\Controllers\LiveController@update']);
 
 
     Route::get('admin/taxonomy', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@index']);
-    Route::get('admin/taxonomy/edit/{id}', ['as' => 'admin.taxonomy', 'uses' => 'App\Http\Controllers\TaxonomyController@edit']);
+    Route::get('/admin/taxonomy/add', ['as' => 'taxonomy.create', 'uses' => 'App\Http\Controllers\TaxonomyController@create']);
+    Route::put('/admin/taxonomy/store', ['as' => 'taxonomy.store', 'uses' => 'App\Http\Controllers\TaxonomyController@store']);
+    Route::get('/admin/taxonomy/delete/{id}', ['as' => 'taxonomy.delete', 'uses' => 'App\Http\Controllers\TaxonomyController@destroy']);
+    Route::get('/admin/taxonomy/edit/{id}', ['as' => 'taxonomy.edit', 'uses' => 'App\Http\Controllers\TaxonomyController@edit']);
+    Route::put('/admin/taxonomy/update/{id}', ['as' => 'taxonomy.update', 'uses' => 'App\Http\Controllers\TaxonomyController@update']);
 });
 Route::get('video/play/{slug}', [VideoController::class, 'play']);

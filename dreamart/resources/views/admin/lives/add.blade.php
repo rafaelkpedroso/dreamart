@@ -1,13 +1,13 @@
- @extends('admin.layouts.app', ['page' => __('Criar Vídeo'), 'pageSlug' => 'Vídeo'])
+ @extends('admin.layouts.app', ['page' => __('Criar Live'), 'pageSlug' => 'Live'])
 
 @section('content')
     <div class="row">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Adicionar Vídeo') }}</h5>
+                    <h5 class="title">{{ __('Adicionar Live') }}</h5>
                 </div>
-                <form method="post" action="/admin/videos/store" autocomplete="off">
+                <form method="post" action="/admin/lives/store" autocomplete="off">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -66,7 +66,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <a class="cancelar" href="/admin/videos" style="">Cancelar</a>
+                        <a class="cancelar" href="/admin/lives" style="">Cancelar</a>
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Salvar') }}</button>
                     </div>
                 </form>

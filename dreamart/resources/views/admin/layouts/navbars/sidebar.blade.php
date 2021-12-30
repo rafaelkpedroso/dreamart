@@ -30,16 +30,16 @@
                         </li>
 
 
-                        <li @if ($pageSlug == 'profile') class="active " @endif>
-                            <a href="{{ route('profile.edit')  }}">
+                        <li @if ($pageSlug == 'li') class="active " @endif>
+                            <a href="{{ route('lives.index')  }}">
                                 <i class="tim-icons icon-triangle-right-17"></i>
                                 <p>Lives</p>
                             </a>
                         </li>
 
 
-                        <li @if ($pageSlug == 'profile') class="active " @endif>
-                            <a href="{{ route('profile.edit')  }}">
+                        <li @if ($pageSlug == 'podcasts') class="active " @endif>
+                            <a href="{{ route('podcasts.index')  }}">
                                 <i class="tim-icons icon-volume-98"></i>
                                 <p>Podcasts</p>
                             </a>
@@ -83,7 +83,7 @@
                     <p>Páginas</p>
                 </a>
             </li>
-            <li @if ($pageSlug == 'maps') class="active " @endif>
+            <!--li @if ($pageSlug == 'maps') class="active " @endif>
                 <a href="{{ route('pages.maps') }}">
                     <i class="tim-icons icon-settings-gear-63"></i>
                     <p>Configurações</p>
@@ -119,7 +119,7 @@
                     <i class="tim-icons icon-align-center"></i>
                     <p>{{ __('Typography') }}</p>
                 </a>
-            </li>
+            </li-->
         </ul>
     </div>
 </div>

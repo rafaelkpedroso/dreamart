@@ -1,13 +1,13 @@
- @extends('admin.layouts.app', ['page' => __('Criar Vídeo'), 'pageSlug' => 'Vídeo'])
+ @extends('admin.layouts.app', ['page' => __('Editar Vídeo'), 'pageSlug' => 'Vídeo'])
 
 @section('content')
     <div class="row">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Adicionar Vídeo') }}</h5>
+                    <h5 class="title">{{ __('Editar Vídeo') }}</h5>
                 </div>
-                <form method="post" action="/admin/videos/store" autocomplete="off">
+                <form method="post" action="/admin/videos/update/{{ $table->id }}" autocomplete="off">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -16,7 +16,7 @@
 
                             <div class="form-group{{ $errors->has('url') ? ' has-danger' : '' }}">
                                 <label>{{ __('URL do Vimeo') }}</label>
-                                <input type="text" name="url" class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}" placeholder="{{ __('https://vimeo.com/12045532') }}" required value="">
+                                <input type="text" name="url" class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}" placeholder="{{ __('https://vimeo.com/12045532') }}" required value="{{ $table->url }}">
 
                                 @include('admin.alerts.feedback', ['field' => 'url'])
                             </div>
@@ -24,14 +24,14 @@
                             <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">
                                 <label>{{ __('Slug') }}</label>
                                 <a href="#" id="gerarslug">(clique aqui para gerar automaticamente)</a>
-                                <input id="slug" type="text" name="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" placeholder="parte do endereço do vídeo" required value="">
+                                <input id="slug" type="text" name="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" placeholder="parte do endereço do vídeo" required value="{{ $table->slug }}">
 
                                 @include('admin.alerts.feedback', ['field' => 'slug'])
                             </div>
 
                             <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
                                 <label>{{ __('Título') }}</label>
-                                <input type="text" name="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Título') }}"  required value="">
+                                <input type="text" name="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Título') }}"  required value="{{ $table->title }}">
                                 @include('admin.alerts.feedback', ['field' => 'title'])
                             </div>
 
@@ -41,7 +41,8 @@
                                     <option value="">Nenhum</option>
                                     @foreach($authors as $author)
                                         <option
-                                                value="{{ $author->id }}">
+                                                value="{{ $author->id }}"
+                                                {{ $table->author==$author->id?'selected':'' }} >
                                             {{ $author->name }}
                                         </option>
                                     @endforeach
@@ -55,7 +56,8 @@
                                     <option value="">Nenhum</option>
                                     @foreach($taxonomies as $cat)
                                         <option
-                                                value="{{ $cat->slug }}">
+                                                value="{{ $cat->slug }}"
+                                                {{ $table->taxonomy==$cat->slug?'selected':'' }} >
                                             {{ $cat->name }}
                                         </option>
                                     @endforeach

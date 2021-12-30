@@ -19,13 +19,17 @@
         <!-- CSS -->
         <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
+        <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
             <div class="wrapper">
+                <div class="hamburguer">
+                    <img src="{{ asset('/img/hamburguer.png') }}" />
+                </div>
                     @include('admin.layouts.navbars.sidebar')
                 <div class="main-panel">
-                    @include('admin.layouts.navbars.navbar')
+
 
                     <div class="content">
                         @yield('content')
@@ -163,9 +167,27 @@
                             }
                     });
                 });
+
+                $(".hamburguer").click(function () {
+
+                    if($(".sidebar").hasClass('abri')){
+
+                        $(".sidebar").css({"transform": "translate3d(-260px, 0px, 0px)"});
+                        $(".sidebar").removeClass("abri");
+
+                    } else{
+
+                        $(".sidebar").css({"transform": "translate3d(0px, 0px, 0px)"});
+                        $(".sidebar").addClass("abri");
+
+                    }
+
+                })
             });
         </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
         @stack('js')
     </body>
 </html>
