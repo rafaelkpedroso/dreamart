@@ -63,7 +63,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/users', ['as' => 'users.index', 'uses' => 'App\Http\Controllers\UserController@index']);
     Route::get('/admin/users/add', ['as' => 'users.create', 'uses' => 'App\Http\Controllers\UserController@create']);
-    Route::post('/admin/users/store', ['as' => 'users.store', 'uses' => 'App\Http\Controllers\UserController@store']);
+    Route::put('/admin/users/store', ['as' => 'users.store', 'uses' => 'App\Http\Controllers\UserController@store']);
+    Route::get('/admin/users/delete/{id}', ['as' => 'users.delete', 'uses' => 'App\Http\Controllers\UserController@destroy']);
+    Route::get('/admin/users/edit/{id}', ['as' => 'users.edit', 'uses' => 'App\Http\Controllers\UserController@edit']);
+    Route::put('/admin/users/update/{id}', ['as' => 'users.update', 'uses' => 'App\Http\Controllers\UserController@update']);
+    Route::get('/admin/users/bills/{id}', ['as' => 'users.bills', 'uses' => 'App\Http\Controllers\UserController@bills']);
 
     Route::get('/admin/videos', ['as' => 'videos.index', 'uses' => 'App\Http\Controllers\VideoController@index']);
     Route::get('/admin/videos/add', ['as' => 'videos.create', 'uses' => 'App\Http\Controllers\VideoController@create']);
@@ -93,5 +97,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/taxonomy/delete/{id}', ['as' => 'taxonomy.delete', 'uses' => 'App\Http\Controllers\TaxonomyController@destroy']);
     Route::get('/admin/taxonomy/edit/{id}', ['as' => 'taxonomy.edit', 'uses' => 'App\Http\Controllers\TaxonomyController@edit']);
     Route::put('/admin/taxonomy/update/{id}', ['as' => 'taxonomy.update', 'uses' => 'App\Http\Controllers\TaxonomyController@update']);
+
+    Route::get('admin/bills', ['as' => 'bills.index', 'uses' => 'App\Http\Controllers\BillsController@index']);
+
+    Route::get('/admin/testimonials', ['as' => 'testimonials.index', 'uses' => 'App\Http\Controllers\TestimonialController@index']);
+    Route::get('/admin/testimonials/add', ['as' => 'testimonials.create', 'uses' => 'App\Http\Controllers\TestimonialController@create']);
+    Route::put('/admin/testimonials/store', ['as' => 'testimonials.store', 'uses' => 'App\Http\Controllers\TestimonialController@store']);
+    Route::get('/admin/testimonials/delete/{id}', ['as' => 'testimonials.delete', 'uses' => 'App\Http\Controllers\TestimonialController@destroy']);
+    Route::get('/admin/testimonials/edit/{id}', ['as' => 'testimonials.edit', 'uses' => 'App\Http\Controllers\TestimonialController@edit']);
+    Route::put('/admin/testimonials/update/{id}', ['as' => 'testimonials.update', 'uses' => 'App\Http\Controllers\TestimonialController@update']);
+
+    Route::get('/admin/setups', ['as' => 'setup.index', 'uses' => 'App\Http\Controllers\SetupController@index']);
+    Route::get('/admin/setups/add', ['as' => 'setup.create', 'uses' => 'App\Http\Controllers\SetupController@create']);
+    Route::put('/admin/setups/store', ['as' => 'setup.store', 'uses' => 'App\Http\Controllers\SetupController@store']);
+    Route::get('/admin/setups/delete/{id}', ['as' => 'setup.delete', 'uses' => 'App\Http\Controllers\SetupController@destroy']);
+    Route::get('/admin/setups/edit/{id}', ['as' => 'setup.edit', 'uses' => 'App\Http\Controllers\SetupController@edit']);
+    Route::put('/admin/setups/update/{id}', ['as' => 'setup.update', 'uses' => 'App\Http\Controllers\SetupController@update']);
 });
 Route::get('video/play/{slug}', [VideoController::class, 'play']);
