@@ -1,4 +1,4 @@
-@extends('admin.layouts.app', ['page' => __('Usuários'), 'pageSlug' => 'users'])
+@extends('admin.layouts.app', ['page' => __('Depoimentos'), 'pageSlug' => 'testimonials'])
 
 @section('content')
     <div class="row">
@@ -10,12 +10,12 @@
 
                         <!-- Title -->
                         <div class="col-4">
-                            <h4 class="card-title">Usuários</h4>
+                            <h4 class="card-title">Depoimentos</h4>
                         </div>
 
                         <!-- Form -->
                         <div class="col-8 text-right">
-                            <a href="/admin/users/add" class="btn btn-sm btn-primary">Inserir</a>
+                            <a href="/admin/testimonials/add" class="btn btn-sm btn-primary">Inserir</a>
                             <form style="    width: fit-content; display: contents;">
                                 <input type="text"
                                        name="busca"
@@ -37,22 +37,12 @@
 
                             <!-- table header -->
                             <thead class=" text-primary">
-                            <tr>
-                                <th scope="col" class="sortable" data-column="name" data-order="{{ ($column=='name' && $order == 'asc')?'desc':'asc' }}">
-                                    Nome
-                                    <i class="arrow {{ ($column=='name' && $order == 'asc')?'down':'up' }}"></i>
-                                </th>
-                                <th scope="col" class="sortable" data-column="email" data-order="{{ ($column=='email' && $order == 'asc')?'desc':'asc' }}">
-                                    E-mail
-                                    <i class="arrow {{ ($column=='email' && $order == 'asc')?'down':'up' }}"></i>
-                                </th>
-                                <th scope="col" data-column="type" data-order="{{ ($column=='type' && $order == 'asc')?'desc':'asc' }}">
-                                    Tipo
-                                </th>
-                                <th scope="col" data-column="active" data-order="{{ ($column=='active' && $order == 'asc')?'desc':'asc' }}">
-                                    Status
-                                </th>
-                            </tr>
+                                <tr>
+                                    <th scope="col" class="sortable" data-column="name" data-order="{{ ($column=='title' && $order == 'asc')?'desc':'asc' }}">
+                                        Nome
+                                        <i class="arrow {{ ($column=='name' && $order == 'asc')?'down':'up' }}"></i>
+                                    </th>
+                                </tr>
                             </thead>
 
                             <!-- table body -->
@@ -60,18 +50,14 @@
                             @foreach ($data as $row)
                                 <tr>
                                     <td>{{$row['name']}}</td>
-                                    <td>{{$row['email']}}</td>
-                                    <td>{{$row['type']?$row['type']:'user'}}</td>
-                                    <td>{{$row['active']?'ativo':'bloqueado'}}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/admin/users/bills/{{$row['id']}}">Cobranças</a>
-                                                <a class="dropdown-item" href="/admin/users/edit/{{$row['id']}}">Editar</a>
-                                                <a class="dropdown-item deletebutton" href="/admin/users/delete/{{$row['id']}}">Excluir</a>
+                                                <a class="dropdown-item" href="/admin/testimonials/edit/{{$row['id']}}">Editar</a>
+                                                <a class="dropdown-item deletebutton" href="/admin/testimonials/delete/{{$row['id']}}">Excluir</a>
                                             </div>
                                         </div>
                                     </td>
@@ -87,27 +73,27 @@
                 <div class="card-footer py-4">
 
                     @if($pages>1)
-                        <nav class="d-flex justify-content-end" aria-label="...">
-                            <!-- paginate -->
-                            <ul class="paginator">
-                                @if($currentpage>1)
-                                    <li class="paginate-left page-go" data-p="{{$currentpage-1}}">
-                                        <i class="arrow left"></i>
-                                    </li>
-                                @endif
+                    <nav class="d-flex justify-content-end" aria-label="...">
+                        <!-- paginate -->
+                        <ul class="paginator">
+                            @if($currentpage>1)
+                            <li class="paginate-left page-go" data-p="{{$currentpage-1}}">
+                                <i class="arrow left"></i>
+                            </li>
+                            @endif
 
-                                @for($i=1;$i<=$pages;$i++)
-                                    <li class="paginate-link page-go {{ ($i==$currentpage?'active':'') }}" data-p="{{$i}}">{{$i}}</li>
-                                @endfor
+                            @for($i=1;$i<=$pages;$i++)
+                            <li class="paginate-link page-go {{ ($i==$currentpage?'active':'') }}" data-p="{{$i}}">{{$i}}</li>
+                            @endfor
 
-                                @if($currentpage!=$pages)
-                                    <li class="paginate-right page-go" data-p="{{$currentpage+1}}">
-                                        <i class="arrow right"></i>
-                                    </li>
-                                @endif
-                            </ul>
+                            @if($currentpage!=$pages)
+                            <li class="paginate-right page-go" data-p="{{$currentpage+1}}">
+                                <i class="arrow right"></i>
+                            </li>
+                            @endif
+                        </ul>
 
-                        </nav>
+                    </nav>
                     @endif
                 </div>
 
