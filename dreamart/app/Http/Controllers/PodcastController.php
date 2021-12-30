@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Video;
+use App\Models\Podcast;
 use App\Models\Taxonomy;
 use Illuminate\Http\Request;
 
 use PhpParser\Node\Expr\Cast\Object_;
 
-class VideoController extends Controller
+class PodcastController extends Controller
 {
 
     /**
@@ -20,14 +20,14 @@ class VideoController extends Controller
     public function play(Request $request, $pSlug)
     {
 
-        $video = Video::where('slug', $pSlug)->first();
-        if(!$video->count()){
+        $podcast = Podcast::where('slug', $pSlug)->first();
+        if(!$podcast->count()){
             return view('public.404');
         }
 
-        $data['url'] = $video->url;
+        $data['url'] = $podcast->url;
 
-        return view('public.video.play', $data);
+        return view('public.podcast.play', $data);
     }
 
 
@@ -39,7 +39,7 @@ class VideoController extends Controller
     public function index(Request $request)
     {
 
-        $table = new Video();
+        $table = new Podcast();
 
         // busca
         if($request->get('busca')){
@@ -62,12 +62,12 @@ class VideoController extends Controller
         $dataSet = $table->skip($skip)->take($rowsPerPage)->get();
 
         $tablevars['sortable'] = 'title';
-        return view('admin.videos.index', ['data' => $dataSet,
-                                                'searchterm' => $request->get('busca'),
-                                                'column' => $request->get('column'),
-                                                'order' => $request->get('order'),
-                                                'pages' =>$pages,
-                                                'currentpage' =>$currentPage
+        return view('admin.podcasts.index', ['data' => $dataSet,
+            'searchterm' => $request->get('busca'),
+            'column' => $request->get('column'),
+            'order' => $request->get('order'),
+            'pages' =>$pages,
+            'currentpage' =>$currentPage
 
         ]);
 
@@ -84,7 +84,7 @@ class VideoController extends Controller
         $authors = User::get();
         $taxonomies = Taxonomy::get();
 
-        return view('admin.videos.add', ['authors' => $authors, 'taxonomies' => $taxonomies]);
+        return view('admin.podcasts.add', ['authors' => $authors, 'taxonomies' => $taxonomies]);
     }
 
     /**
@@ -95,8 +95,8 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $video = Video::create($request->all());
-        return redirect('/admin/videos');
+        $podcast = Podcast::create($request->all());
+        return redirect('/admin/podcasts');
     }
 
     /**
@@ -118,11 +118,11 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        $table = Video::find($id);
+        $table = Podcast::find($id);
         $authors = User::get();
         $taxonomies = Taxonomy::get();
 
-        return view('admin.videos.edit', ['table' => $table, 'authors' => $authors, 'taxonomies' => $taxonomies]);
+        return view('admin.podcasts.edit', ['table' => $table, 'authors' => $authors, 'taxonomies' => $taxonomies]);
     }
 
     /**
@@ -134,8 +134,8 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $video = Video::find($id)->update($request->all());
-        return redirect('/admin/videos');
+        $podcast = Podcast::find($id)->update($request->all());
+        return redirect('/admin/podcasts');
 
     }
 
@@ -147,8 +147,8 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        Video::destroy($id);
-        return redirect('/admin/videos');
+        Podcast::destroy($id);
+        return redirect('/admin/podcasts');
 
     }
 }

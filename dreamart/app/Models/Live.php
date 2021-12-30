@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model {
-
+class Live extends Model
+{
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'video';
+    protected $table = 'live';
 
     /**
      * The primary key associated with the table.
@@ -24,5 +25,4 @@ class Video extends Model {
      * @var array
      */
     protected $fillable = ['slug', 'title', 'author', 'url','views','rating','taxonomy'];
-
 }

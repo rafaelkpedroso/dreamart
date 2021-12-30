@@ -48,7 +48,9 @@ class TaxonomyController extends Controller
      */
     public function create()
     {
-        //
+        $pais = Taxonomy::where(['father' => NULL])->get();
+
+        return view('admin.taxonomy.add', ['pais' => $pais]);
     }
 
     /**
@@ -59,7 +61,8 @@ class TaxonomyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tax = Taxonomy::create($request->all());
+        return redirect('/admin/taxonomy');
     }
 
     /**
@@ -96,7 +99,9 @@ class TaxonomyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tax = Taxonomy::find($id)->update($request->all());
+        return redirect('/admin/taxonomy');
+
     }
 
     /**
@@ -107,6 +112,7 @@ class TaxonomyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Taxonomy::destroy($id);
+        return redirect('/admin/taxonomy');
     }
 }
