@@ -113,5 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/setups/delete/{id}', ['as' => 'setup.delete', 'uses' => 'App\Http\Controllers\SetupController@destroy']);
     Route::get('/admin/setups/edit/{id}', ['as' => 'setup.edit', 'uses' => 'App\Http\Controllers\SetupController@edit']);
     Route::put('/admin/setups/update/{id}', ['as' => 'setup.update', 'uses' => 'App\Http\Controllers\SetupController@update']);
+
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
 Route::get('video/play/{slug}', [VideoController::class, 'play']);

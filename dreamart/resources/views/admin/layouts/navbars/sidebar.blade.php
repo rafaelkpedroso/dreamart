@@ -83,6 +83,12 @@
                     <p>Configurações</p>
                 </a>
             </li>
+            <li @if ($pageSlug == 'logout') class="active " @endif>
+                <a href="/logout">
+                    <i class="tim-icons icon-simple-remove"></i>
+                    <p>Sair</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

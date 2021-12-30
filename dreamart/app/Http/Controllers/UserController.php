@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Bill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use PhpParser\Node\Expr\Cast\Object_;
 
@@ -92,7 +93,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create($request->all());
+        $user = new User();
+        $user->name = $request->post('name');
+        $user->email = $request->post('email');
+        $user->type = $request->post('type');
+        $user->active = $request->post('active');
+
+        $hashed = Hash::make($request->post('password'));
+        $user->password =$hashed;
+
+        $user->save();
+
         return redirect('/admin/users');
     }
 
@@ -136,7 +147,8 @@ class UserController extends Controller
         $user->active = $request->post('active');
 
         if($request->post('password') != ''){
-            $user->password = $request->post('password');
+            $hashed = Hash::make($request->post('password'));
+            $user->password =$hashed;
         }
 
         $user->update();
