@@ -44,19 +44,19 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 // Conteúdos
-Route::get('/', [WebsiteController::class, 'home']);
-Route::get('/quemsomos', [WebsiteController::class, 'quemsomos']);
-Route::get('/faq', [WebsiteController::class, 'faq']);
-Route::get('/legal', [WebsiteController::class, 'legal']);
-Route::get('/politicadeprivacidade', [WebsiteController::class, 'politicadeprivacidade']);
-Route::get('/cookies', [WebsiteController::class, 'cookies']);
-Route::get('/planos', [WebsiteController::class, 'planos']);
-Route::get('/videos', [WebsiteController::class, 'videos']);
-Route::get('/lives', [WebsiteController::class, 'lives']);
-Route::get('/podcasts', [WebsiteController::class, 'podcasts']);
-Route::get('/favoritos', [WebsiteController::class, 'favoritos']);
-Route::get('/video/{videoid}', [WebsiteController::class, 'video']);
-Route::get('/busca/', [WebsiteController::class, 'busca']);
+//Route::get('/', [WebsiteController::class, 'home']);
+//Route::get('/quemsomos', [WebsiteController::class, 'quemsomos']);
+//Route::get('/faq', [WebsiteController::class, 'faq']);
+//Route::get('/legal', [WebsiteController::class, 'legal']);
+//Route::get('/politicadeprivacidade', [WebsiteController::class, 'politicadeprivacidade']);
+//Route::get('/cookies', [WebsiteController::class, 'cookies']);
+//Route::get('/planos', [WebsiteController::class, 'planos']);
+//Route::get('/videos', [WebsiteController::class, 'videos']);
+//Route::get('/lives', [WebsiteController::class, 'lives']);
+//Route::get('/podcasts', [WebsiteController::class, 'podcasts']);
+//Route::get('/favoritos', [WebsiteController::class, 'favoritos']);
+//Route::get('/video/{videoid}', [WebsiteController::class, 'video']);
+//Route::get('/busca/', [WebsiteController::class, 'busca']);
 
 
 Route::group(['middleware' => 'auth'], function () {
