@@ -135,6 +135,14 @@ class LiveController extends Controller
     public function update(Request $request, $id)
     {
         $live = Live::find($id)->update($request->all());
+        $live = Live::find($id);
+
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img/videos'), $imageName);
+            $live->image = $imageName;
+            $live->update();
+        }
         return redirect('/admin/lives');
 
     }

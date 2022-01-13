@@ -96,6 +96,13 @@ class PodcastController extends Controller
     public function store(Request $request)
     {
         $podcast = Podcast::create($request->all());
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img/videos'), $imageName);
+
+        $podcast->image = $imageName;
+        $podcast->save();
+
         return redirect('/admin/podcasts');
     }
 
@@ -135,6 +142,16 @@ class PodcastController extends Controller
     public function update(Request $request, $id)
     {
         $podcast = Podcast::find($id)->update($request->all());
+        $podcast = Podcast::find($id);
+
+
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img/videos'), $imageName);
+            $podcast->image = $imageName;
+            $podcast->update();
+        }
+
         return redirect('/admin/podcasts');
 
     }

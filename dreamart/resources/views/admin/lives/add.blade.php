@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Adicionar Live') }}</h5>
                 </div>
-                <form method="post" action="/admin/lives/store" autocomplete="off">
+                <form method="post" action="/admin/lives/store" autocomplete="off" enctype="multipart/form-data">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -62,6 +62,12 @@
                                 </select>
                                 @include('admin.alerts.feedback', ['field' => 'taxonomy'])
                             </div>
+
+                        <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                            <label>{{ __('Imagem') }}</label>
+                            <input type="file" name="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" placeholder="{{ __('Imagem') }}"  required value="">
+                            @include('admin.alerts.feedback', ['field' => 'image'])
+                        </div>
 
 
                     </div>

@@ -92,6 +92,7 @@ nav{
     background-color: #232323;
     color: #4a4a4a;
     margin-left: -200px;
+    z-index: 9;
 
 }
 nav ul{
@@ -515,7 +516,7 @@ header #search{
     border: solid 1px #fb792c;
     border-radius: 20px;
     padding: 8px 8px 8px 48px;
-    width: 60%;
+    width: 90%;
     font-family: Roboto;
     font-weight: lighter;
     font-size: 16px;
@@ -529,14 +530,24 @@ header #menucontainer{
     top: 0px;
     right: 0px;
 }
+header .profile{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+header .profile a{
+    margin: 4px;
+}
 header  .profilepic{
     background: #fb792c;
     border-radius: 25px;
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-image: url(/img/jiujiteiro.png);
+    background-image: url(/img/avatar-default.png);
     background-size: cover;
+    margin-right:6px;
 }
 header #menucontainer .search{
     background-image: url('/img/search-icon.png');
@@ -666,4 +677,90 @@ section#faq #ppd-container .row span{
 }
 section#faq #ppd-container .row .ppd-gray{
     background: lightgray;
+}
+
+
+/* form */
+form.daform input{
+    width: 100%;
+    color: grey;
+    border: solid 2px grey;
+    border-radius: 10px;
+    background: none;
+    padding: 10px;
+    margin: 10px 0px;
+}
+form.daform input:focus{
+    outline: none;
+}
+form.daform button[type=submit], form.daform input[type=submit] {
+    margin-top:10px;
+    color: white;
+    background-color: #fb792c;
+    border:none;
+    border-radius: 10px;
+    padding:6px  20px;
+    font-weight: bold;
+}
+form.daform a, form.daform a:active, form.daform a:hover, form.daform a:visited{
+    color:#fb792c;
+    font-weight: bold;
+}
+form.daform input.form-control:focus {
+    width: 100%;
+    color: grey;
+    border: solid 2px grey;
+    border-radius: 10px;
+    background: none;
+    padding: 10px;
+    margin: 10px 0px;
+    outline: none;
+}
+
+textarea{
+    width: 100%;
+    height: 120px;
+    color: grey;
+    border: solid 2px grey;
+    border-radius: 10px;
+    background: none;
+    padding: 10px;
+}
+textarea{
+    outline: none;
+}
+
+
+.videogrid{
+    padding: 40px;
+}
+.videogrid:nth-child(even) {background: #black}
+.videogrid:nth-child(odd) {background: #2e2e2e}
+.videogrid-video{
+    width: 200px;
+    height: 220px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    display: inline-block;
+    border: solid 1px #343434;
+}
+.videogrid-video-overlay{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.paywall{
+    text-align: center;
+}
+.paywall a, .paywall a:hover, .paywall a:active, .paywall a:visited{
+    color:#fb792c;
+    font-weight: bold;
 }

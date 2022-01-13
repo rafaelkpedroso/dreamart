@@ -44,19 +44,29 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 // Conteúdos
-//Route::get('/', [WebsiteController::class, 'home']);
-//Route::get('/quemsomos', [WebsiteController::class, 'quemsomos']);
-//Route::get('/faq', [WebsiteController::class, 'faq']);
-//Route::get('/legal', [WebsiteController::class, 'legal']);
-//Route::get('/politicadeprivacidade', [WebsiteController::class, 'politicadeprivacidade']);
-//Route::get('/cookies', [WebsiteController::class, 'cookies']);
-//Route::get('/planos', [WebsiteController::class, 'planos']);
-//Route::get('/videos', [WebsiteController::class, 'videos']);
-//Route::get('/lives', [WebsiteController::class, 'lives']);
-//Route::get('/podcasts', [WebsiteController::class, 'podcasts']);
-//Route::get('/favoritos', [WebsiteController::class, 'favoritos']);
-//Route::get('/video/{videoid}', [WebsiteController::class, 'video']);
-//Route::get('/busca/', [WebsiteController::class, 'busca']);
+Route::get('/', [WebsiteController::class, 'home']);
+Route::get('/home', [WebsiteController::class, 'home']);
+Route::get('/quemsomos', [WebsiteController::class, 'quemsomos']);
+Route::get('/faq', [WebsiteController::class, 'faq']);
+Route::get('/legal', [WebsiteController::class, 'legal']);
+Route::get('/politicadeprivacidade', [WebsiteController::class, 'politicadeprivacidade']);
+Route::get('/cookies', [WebsiteController::class, 'cookies']);
+Route::get('/planos', [WebsiteController::class, 'planos']);
+
+Route::get('/videos', [WebsiteController::class, 'videos']);
+Route::get('/video/{videoid}', [WebsiteController::class, 'video']);
+Route::get('/lives', [WebsiteController::class, 'lives']);
+Route::get('/podcasts', [WebsiteController::class, 'podcasts']);
+Route::get('/podcasts/{videoid}', [WebsiteController::class, 'podcast']);
+Route::get('/favoritos', [WebsiteController::class, 'favoritos']);
+Route::get('/busca/', [WebsiteController::class, 'busca']);
+
+Route::post('/comments/store', ['as' => 'comments.store', 'uses' => 'App\Http\Controllers\CommentController@store']);
+Route::post('/comments/update/{id}', ['as' => 'comments.update', 'uses' => 'App\Http\Controllers\CommentController@update']);
+Route::get('/comments/delete/{id}', ['as' => 'comments.delete', 'uses' => 'App\Http\Controllers\CommentController@destroy']);
+Route::get('/comments/like/{id}', ['as' => 'comments.like', 'uses' => 'App\Http\Controllers\CommentController@like']);
+Route::get('/comments/dislike/{id}', ['as' => 'comments.dislike', 'uses' => 'App\Http\Controllers\CommentController@dislike']);
+
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -75,6 +85,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/videos/delete/{id}', ['as' => 'videos.delete', 'uses' => 'App\Http\Controllers\VideoController@destroy']);
     Route::get('/admin/videos/edit/{id}', ['as' => 'videos.edit', 'uses' => 'App\Http\Controllers\VideoController@edit']);
     Route::put('/admin/videos/update/{id}', ['as' => 'videos.update', 'uses' => 'App\Http\Controllers\VideoController@update']);
+    Route::get('/video/addview/{id}', ['as' => 'videos.addview', 'uses' => 'App\Http\Controllers\VideoController@addview']);
+    Route::get('/video/rate/{id}/{rate}', ['as' => 'videos.rate', 'uses' => 'App\Http\Controllers\VideoController@rate']);
 
     Route::get('/admin/podcasts', ['as' => 'podcasts.index', 'uses' => 'App\Http\Controllers\PodcastController@index']);
     Route::get('/admin/podcasts/add', ['as' => 'podcasts.create', 'uses' => 'App\Http\Controllers\PodcastController@create']);

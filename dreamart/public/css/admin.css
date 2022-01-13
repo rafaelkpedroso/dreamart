@@ -59,6 +59,11 @@
     z-index: 999999;
     display: none;
 }
+
+.form-group input[type=file] {
+    opacity: 1 !important;
+    position: relative !important;
+}
 @media screen and (max-width: 991px){
     .hamburguer{
         display: block;

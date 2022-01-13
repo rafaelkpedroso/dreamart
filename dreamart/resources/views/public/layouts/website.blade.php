@@ -22,6 +22,14 @@
     <link href="{{ asset('css/website.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
 
+    <style>
+
+        .profile a, a:hover, a:active{
+            color:#fb792c;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body class="{{ $class ?? '' }}">
 
@@ -39,7 +47,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-7 m-auto">
+                    <div class="col-lg-6 m-auto">
                         <div id="searchcontainer">
                             <form name="searchform" action="/busca/" method="get">
                                 <input type="text" name="search" id="search" placeholder="O que você está buscando?">
@@ -47,12 +55,17 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-2 m-auto">
+                    <div class="col-lg-3 m-auto">
                         <div class="profile">
-                            <span class="profilepic"></span>
-                            Rafael Pedroso
-                            |
-                            <img src="/img/hamburguer-icon.png" id="hamburguer"/>
+
+                            @if(Auth::user())
+                                <span class="profilepic"></span>
+                                {{ Auth::user()->name  }}
+                            @else
+                                <a href="/login">Entre</a> ou <a href="planos">crie sua conta</a>
+                            @endif
+
+                                <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"/>
                         </div>
                     </div>
 
@@ -92,17 +105,34 @@
                         Podcasts
                     </a>
                 </li>
-                <li>
+                <!--li>
                     <a href="/favoritos">
                         <img src="/img/icon-favoritos.png" alt="Favoritos" />
                         Favoritos
                     </a>
-                </li>
-            </ul>
-        </nav>
+                </li-->
 
-        @include('public.layouts.footer')
-    </div>
+                @if(Auth::user())
+                    @if(Auth::user()->type == 'admin')
+                        <li>
+                            <a href="/admin">
+                                Administração
+                            </a>
+                        </li>
+                    @endif
+                @endif
+
+                <li>
+                    <a href="/logout">
+                        Sair
+                    </a>
+                </li>
+
+</ul>
+</nav>
+
+@include('public.layouts.footer')
+</div>
 </div>
 
 <!-- javascript -->
@@ -111,22 +141,22 @@
 @stack('js')
 
 <script>
-    /*menu*/
-    $(document).ready(function(){
+/*menu*/
+$(document).ready(function(){
 
-        $("#hamburguer").click(function(){
+$("#hamburguer").click(function(){
 
-            if ($("nav").hasClass('active')){
-                $("nav").removeClass('active');
-                $("nav").animate({"margin-left": '-=200'});
-            } else {
-                $("nav").addClass('active');
-                $("nav").animate({"margin-left": '+=200'});
-            }
+if ($("nav").hasClass('active')){
+$("nav").removeClass('active');
+$("nav").animate({"margin-left": '-=200'});
+} else {
+$("nav").addClass('active');
+$("nav").animate({"margin-left": '+=200'});
+}
 
 
-        });
-    });
+});
+});
 </script>
 </body>
 </html>

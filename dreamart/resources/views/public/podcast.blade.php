@@ -111,26 +111,7 @@
                             <span class="orange">{{{ $data['views'] }}} visualizações</span>
                         </div>
                         <div class="col-lg-2  my-auto">
-                            Avaliações<br/>
 
-                            @for($i=0; $i<round($data->rating); $i++)
-                                @if(Auth::user())
-                                    <a href="/video/rate/{{$data->id}}/{{ $i+1 }}">
-                                        <img src="/img/star-full.png" />
-                                    </a>
-                                @else
-                                    <img src="/img/star-full.png" />
-                                @endif
-                            @endfor
-                            @for($j=0; $j<(5-round($data->rating)); $j++)
-                                @if(Auth::user())
-                                    <a href="/video/rate/{{$data->id}}/{{ $j+round($data->rating)+1 }}">
-                                        <img src="/img/star-vazia.png" />
-                                    </a>
-                                @else
-                                    <img src="/img/star-vazia.png" />
-                                @endif
-                            @endfor
 
                         </div>
                         <div class="col-lg-2 my-auto">
@@ -141,7 +122,6 @@
 
                                 <span class="orange">Compartilhar</span>
                                 <img src="/img/share-icon.png" />
-
                             </a>
                         </div>
                     </div>
@@ -151,106 +131,6 @@
 
         </div>
 
-        @if(Auth::user())
-        <div class="container-fluid bgcinza" style="margin-top: 40px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <p class="title3">Deixe seu comentário</p>
-
-                        <div class="comment-form">
-                            <form id="comentar-form">
-                                <input type="hidden" name="videoid" value="{{ $data->id }}">
-                                <div class="row">
-                                    <div class="col-lg-1">
-                                        <img src="/img/avatar-default.png">
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <textarea name="text" id="text" required></textarea>
-                                    </div>
-                                    <div class="col-lg-1" style="display: flex; align-items: flex-end; justify-content: flex-start;">
-                                        <input type="submit" value="Comentar" id="comentar" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        @foreach($comments as $c)
-                        <div class="comments" data-idcomment="{{ $c->id }}">
-                            <div class="row">
-                                <div class="col-lg-1">
-                                    <img src="/img/avatar-default.png">
-                                </div>
-                                <div class="col-lg-11">
-
-                                    <p class="comment-name">{{ $c->name }}</p>
-                                    <p class="comment-text">{{ $c->text }} </p>
-
-                                    @if(Auth::user())
-                                        @if(Auth::user()->type == 'admin')
-
-                                            <form method="post" action="/comments/update/{{ $c->id }}" class="moderarform"  data-idcomment="{{ $c->id }}" style="display: none">
-                                                @csrf
-                                                <input type="hidden" name="videoid" value="{ $c->id }}">
-                                                <textarea name="text" required>{{ $c->text }}</textarea>
-                                                <input type="submit" value="Alterar" class="moderarform-alterar" />
-                                                <input type="button" value="Deletar" class="moderarform-deletar" data-url="/comments/delete/{{ $c->id }}" />
-                                            </form>
-
-                                            <a href="#" class="moderar" data-idcomment="{{ $c->id }}">  moderar </a>
-                                        @endif
-                                    @endif
-
-                                    <div class="comment-actions">
-
-                                        <div class="row">
-                                            <div class="col-lg-1">
-                                                <span class="">{{ $c->likes }}</span>
-                                                <a class="like likebtn" href="/comments/like/{{ $c->id }}">
-                                                    <img src="/img/like-icon.png" alt="Like"/>
-                                                </a>
-                                            </div>
-                                            <div class="col-lg-1">
-                                                <span>{{ $c->dislikes }}</span>
-                                                <a class="dislike likebtn" href="/comments/dislike/{{ $c->id }}">
-                                                    <img src="/img/dislike-icon.png" alt="Like"/>
-                                                </a>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <a id="btn-responder">
-                                                    RESPONDER
-                                                </a>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <p class="title3">Para ver na Sequência</p>
-
-                        <div class="videogrid">
-                        @if((is_array($paravernasequencia) || is_object($paravernasequencia)))
-                                @foreach($paravernasequencia as $v)
-
-                                    @include('public.parts.thumbnail')
-
-
-                                @endforeach
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endif
 
     </div>
 

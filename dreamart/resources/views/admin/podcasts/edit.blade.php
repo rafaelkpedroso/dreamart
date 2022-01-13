@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Editar Podcast') }}</h5>
                 </div>
-                <form method="post" action="/admin/podcasts/update/{{ $table->id }}" autocomplete="off">
+                <form method="post" action="/admin/podcasts/update/{{ $table->id }}" autocomplete="off" enctype="multipart/form-data">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -64,6 +64,13 @@
                                 </select>
                                 @include('admin.alerts.feedback', ['field' => 'taxonomy'])
                             </div>
+
+                        <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                            <label>{{ __('Imagem') }}</label><br/>
+                            <img src="/img/videos/{{ $table->image }}" style="width: 100px; height: auto" />
+                            <input type="file" name="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" placeholder="{{ __('Imagem') }}"   value="">
+                            @include('admin.alerts.feedback', ['field' => 'image'])
+                        </div>
 
 
                     </div>

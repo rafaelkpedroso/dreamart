@@ -1,32 +1,50 @@
-@extends('admin.layouts.app', ['class' => 'login-page', 'page' => __('Reset password'), 'contentClass' => 'login-page'])
+@extends('public.layouts.website', ['pageSlug' => 'login'])
 
 @section('content')
-    <div class="col-lg-5 col-md-7 ml-auto mr-auto">
-        <form class="form" method="post" action="{{ route('password.email') }}">
-            @csrf
 
-            <div class="card card-login card-white">
-                <div class="card-header">
-                    <img src="{{ asset('black') }}/img/card-primary.png" alt="">
-                    <h1 class="card-title">{{ __('Recuperar senha') }}</h1>
+    <div class="mockup" style="margin-top:120px;">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-6" style="   background-image: url(/img/bg004.png);
+                                            background-repeat: no-repeat;
+                                            background-position: center center;
+                                            background-size: cover;
+                                            height: 60vh;">
                 </div>
-                <div class="card-body">
-                    @include('admin.alerts.success')
 
-                    <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="tim-icons icon-email-85"></i>
+                <div class="col-lg-4 offset-1" style="">
+                    <div class="login-container" style="    display:flex;
+                                                        flex-direction: column;
+                                                        flex-wrap: nowrap;
+                                                        justify-content: center;
+                                                        height:100%">
+
+                        <form class="daform" method="post" action="{{ route('password.email') }}">
+                            @csrf
+
+                            <h1>Recuperar senha</h1>
+                            @include('admin.alerts.success')
+
+                            <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
+                                @include('admin.alerts.feedback', ['field' => 'email'])
                             </div>
-                        </div>
-                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
-                        @include('admin.alerts.feedback', ['field' => 'email'])
+
+
+                            <button type="submit" >{{ __('Solicitar nova senha') }}</button>
+                            ou
+                            <a href="/login">voltar</a>
+
+                        </form>
+
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">{{ __('Solicitar nova senha') }}</button>
-                </div>
             </div>
-        </form>
+        </div>
     </div>
 @endsection
+
+@push('js')
+
+@endpush

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Video;
 use App\Models\Taxonomy;
+use App\Models\Rates;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use PhpParser\Node\Expr\Cast\Object_;
 
@@ -96,6 +98,13 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $video = Video::create($request->all());
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img/videos'), $imageName);
+
+        $video->image = $imageName;
+        $video->save();
+        
         return redirect('/admin/videos');
     }
 
@@ -135,6 +144,16 @@ class VideoController extends Controller
     public function update(Request $request, $id)
     {
         $video = Video::find($id)->update($request->all());
+        $video = Video::find($id);
+
+
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img/videos'), $imageName);
+            $video->image = $imageName;
+            $video->update();
+        }
+
         return redirect('/admin/videos');
 
     }
@@ -149,6 +168,32 @@ class VideoController extends Controller
     {
         Video::destroy($id);
         return redirect('/admin/videos');
+
+    }
+
+    public function addview($id)
+    {
+        $video = Video::find($id);
+        $video->views = $video->views+1;
+        $video->update();
+    }
+
+    public function rate($id,$rate)
+    {
+
+        $table = new Rates();
+        $table->videoid = $id;
+        $table->author = Auth::user()->id;
+        $table->rate = $rate;
+        $table->save();
+
+        $avg = Rates::where('videoid','=',$id)->groupBy('videoid')->avg('rate');
+
+        $video = Video::find($id);
+        $video->rating = $avg;
+        $video->save();
+
+       return redirect()->back();
 
     }
 }
