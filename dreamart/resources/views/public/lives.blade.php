@@ -24,65 +24,59 @@
             line-height: 18px;
             white-space: normal;
         }
-        .bgcinza{
-            background-color: #2e2e2e;
+        .videogrid{
             padding: 40px;
         }
-        .bgpreto{
-            background-color: black;
-            padding: 40px;
+        .videogrid:nth-child(even) {background: #black}
+        .videogrid:nth-child(odd) {background: #2e2e2e}
+        .videogrid-video{
+            width: 200px;
+            height: 220px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: white;
+            display: inline-block;
+            border: solid 1px #343434;
+        }
+        .videogrid-video-overlay{
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        .favoritar{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
         }
     </style>
     <div class="mockup" style="margin-top:120px; margin-bottom: 120px;">
         <div class="container-fluid">
 
+
             <div class="row bgcinza">
                 <div class="col-lg-12">
                     <div class="container">
-                       <p class="title">Lives</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row bgpreto">
-                <div class="col-lg-12">
-
-                    <div class="container">
-                        <p class="title2 orange">Sweeps From</p>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="title3">Butterfly</p>
-
-                                <a href="/video/1" class="videothumb">
-                                    <img src="/img/mockup-card4.png" class="animate__animated animate__fadeInUp">
-                                </a>
-
-                                <a href="/video/2" class="videothumb">
-                                    <img src="/img/mockup-card1.png" class="animate__animated animate__fadeInUp">
-                                </a>
-                            </div>
-                        </div>
+                        <p class="title">Lives</p>
+                        {{--<img src="/img/mockup-ordenarpor.png"/>--}}
                     </div>
                 </div>
             </div>
 
 
-            <div class="row bgcinza">
-                <div class="col-lg-12">
 
-                    <div class="container">
-                        <p class="title2 orange">Passes</p>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="title3">Butterfly</p>
 
-                                <a href="/video/1">
-                                    <img src="/img/mockup-card3.png" class="animate__animated animate__fadeInUp">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @foreach($obj as $v)
+                @include('public.parts.thumbnaillive')
+
+            @endforeach
+
             </div>
 
         </div>

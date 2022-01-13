@@ -96,6 +96,13 @@ class LiveController extends Controller
     public function store(Request $request)
     {
         $live = Live::create($request->all());
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img/videos'), $imageName);
+
+        $live->image = $imageName;
+        $live->save();
+
         return redirect('/admin/lives');
     }
 

@@ -84,7 +84,7 @@
                             @foreach($item['videos'] as $video1)
 
                                 @php($v = $video1)
-                                @include('public.parts.thumbnail')
+                                @include('public.parts.thumbnailpodcast')
 
 
                             @endforeach
@@ -102,7 +102,7 @@
                                         @foreach($item2['videos'] as $video2)
 
                                             @php($v = $video2)
-                                            @include('public.parts.thumbnail')
+                                            @include('public.parts.thumbnailpodcast')
 
                                         @endforeach
                                     @endif
