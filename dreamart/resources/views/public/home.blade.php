@@ -25,7 +25,7 @@
         </p>
 
 
-        <a href="/planos" class="btn btnorange animate__animated animate__fadeInUp animate__slower">
+        <a href="/planos" class="btn btnorange animate__animated animate__fadeInUp animate__slower btnfaca">
          Faça parte
         </a>
 

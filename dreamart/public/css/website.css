@@ -770,3 +770,11 @@ textarea{
     height:204px;
     border-radius: 200px;
 }
+
+.btnfaca{
+    border-radius: 10px;
+}
+
+.btnfaca, .btnfaca:hover, .btnfaca:active, .btnfaca:visited{
+    color:white;
+}
