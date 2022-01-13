@@ -275,7 +275,7 @@ nav ul li img{
 
 .carousel-text .carousel-text-left{
     position: absolute;
-    left: -120px;
+    left: -80px;
     top: 50%;
     transform: translate(-50%, 0);
     transition: transform .2s; /* Animation */
