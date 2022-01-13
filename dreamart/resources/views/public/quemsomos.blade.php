@@ -9,9 +9,14 @@
                 <div class="col-lg-4 offset-1">
                     <h1>Quem Somos</h1>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing</p>
+                    <p>O Dream Art Streaming foi criado para quem ama Jiu-Jitsu. Atletas e fãs encontram na plataforma uma experiência única e personalizável para estar mais perto do esporte, ao lado dos melhores e mais criativos profissionais!</p>
+
+                    <p>Depois de estudar a fundo o que o mercado oferece, desenvolvemos um espaço amplo e rico, no qual você encontra uma grande variedade de histórias, jogos, personalidades e faixas para ver e aprender Jiu-Jitsu.</p>
+
+                    <h3>O Projeto</h3>
+                    <p>O Dream Art Project nasceu do sonho de realizar sonhos. Acompanhamos a trajetória de jovens atletas de Jiu-Jitsu que são selecionados por já ter uma carreira de muitas experiências, e precisam de acompanhamento para que se tornem grandes profissionais. São, hoje, 30 atletas focados em competição e capacitação simultânea (acadêmica e profissional).</p>
+
+                    <p>Faça parte de um universo ainda maior do Jiu-Jitsu! Sua assinatura ajuda a manter ativo um hub de transformação.</p>
 
 
                 </div>

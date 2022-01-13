@@ -14,15 +14,43 @@
                     <ul class="dreamart-accordion">
 
                         <li>
-                            <p>O que é Dream Art? <i></i></p>
+                            <p>Como faço para acessar meus Planos e Preços?<i></i></p>
                             <span>Lorem Ipsum</span>
                         </li>
                         <li>
-                            <p>O que é bjj? <i></i></p>
+                            <p>Recebi um e-mail dizendo que houve um novo acesso à minha conta. O que fazer? <i></i></p>
                             <span>Lorem Ipsum</span>
                         </li>
                         <li>
-                            <p>Como me matriculo?<i></i></p>
+                            <p>Quero saber sobre cobranças e pagamentos<i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+                        <li>
+                            <p>Minha conta está suspensa por falta de pagamento. O que fazer?<i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+                        <li>
+                            <p>Posso mudar o modo de pagamento de minhas contas?<i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+
+                        <li>
+                            <p>Tive uma cobrança indevida. Como resolver? <i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+
+                        <li>
+                            <p>Problemas de conexão <i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+
+                        <li>
+                            <p>Minhas páginas estão travando <i></i></p>
+                            <span>Lorem Ipsum</span>
+                        </li>
+
+                        <li>
+                            <p>Como faço para mudar meu login e senha?<i></i></p>
                             <span>Lorem Ipsum</span>
                         </li>
 
