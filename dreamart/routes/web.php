@@ -51,11 +51,14 @@ Route::get('/faq', [WebsiteController::class, 'faq']);
 Route::get('/legal', [WebsiteController::class, 'legal']);
 Route::get('/politicadeprivacidade', [WebsiteController::class, 'politicadeprivacidade']);
 Route::get('/cookies', [WebsiteController::class, 'cookies']);
+
 Route::get('/planos', [WebsiteController::class, 'planos']);
+Route::post('/cadastrar', ['as' => 'cadastrar', 'uses' => 'App\Http\Controllers\UserController@cadastrar']);
 
 Route::get('/videos', [WebsiteController::class, 'videos']);
 Route::get('/video/{videoid}', [WebsiteController::class, 'video']);
 Route::get('/lives', [WebsiteController::class, 'lives']);
+Route::get('/lives/{videoid}', [WebsiteController::class, 'live']);
 Route::get('/podcasts', [WebsiteController::class, 'podcasts']);
 Route::get('/podcasts/{videoid}', [WebsiteController::class, 'podcast']);
 Route::get('/favoritos', [WebsiteController::class, 'favoritos']);

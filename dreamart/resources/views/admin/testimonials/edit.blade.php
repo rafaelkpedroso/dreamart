@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Editar Depoimento') }}</h5>
                 </div>
-                <form method="post" action="/admin/testimonials/update/{{ $table->id }}" autocomplete="off">
+                <form method="post" action="/admin/testimonials/update/{{ $table->id }}" autocomplete="off"  enctype="multipart/form-data">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -26,6 +26,13 @@
                             <textarea id="testimonial" name="testimonial" class="form-control{{ $errors->has('testimonial') ? ' is-invalid' : '' }}" placeholder="Depoimento" required>{{$table->testimonial}}</textarea>
 
                             @include('admin.alerts.feedback', ['field' => 'testimonial'])
+                        </div>
+
+                        <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                            <label>{{ __('Imagem') }}</label><br/>
+                            <img src="/img/testimonials/{{ $table->image }}" style="width: 100px; height: auto" />
+                            <input type="file" name="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" placeholder="{{ __('Imagem') }}"   value="">
+                            @include('admin.alerts.feedback', ['field' => 'image'])
                         </div>
 
 

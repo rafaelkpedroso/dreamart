@@ -6,8 +6,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use App\Models\Video;
 use App\Models\Podcast;
+use App\Models\Live;
+use App\Models\Setup;
 use App\Models\Taxonomy;
 use App\Models\Comment;
+use App\Models\Testimonial;
 
 
 class WebsiteController extends Controller
@@ -20,7 +23,18 @@ class WebsiteController extends Controller
     public function home()
     {
 
-        return view('public.home');
+        $podcasts = Podcast::
+            join('users', 'users.id', '=', 'podcast.author')
+            ->select('podcast.id','podcast.title', 'podcast.image','podcast.rating','users.name')
+            ->limit(5)
+            ->get();
+
+        $depoimentos = Testimonial::limit(5)
+            ->get();
+
+        return view('public.home')
+            ->with('depoimentos',$depoimentos)
+            ->with('podcasts',$podcasts);
     }
 
     /**
@@ -57,7 +71,11 @@ class WebsiteController extends Controller
     }
     public function planos()
     {
-        return view('public.planos');
+
+        $setup = Setup::where('key','=','price')->get();
+        $price = $setup[0]->value;
+
+        return view('public.planos')->with('price',$price);
     }
 
     public function videos()
@@ -106,7 +124,19 @@ class WebsiteController extends Controller
 
     public function lives()
     {
-        return view('public.lives');
+
+        $obj = null;
+        $cats = Taxonomy::get();
+
+        foreach($cats as $cat){
+
+            $lives = Live::join('users', 'users.id', '=', 'live.author')
+                ->select('live.id','live.title', 'live.image','live.rating','users.name')
+                ->get();
+
+        }
+
+        return view('public.lives')->with('obj',$lives);
     }
 
     public function favoritos()
@@ -196,40 +226,53 @@ class WebsiteController extends Controller
     {
 
         $video = Podcast::where('podcast.id','=',$request->videoid)
-            ->leftJoin('users', 'users.id', '=', 'video.author')
-            ->select('video.id','video.url','video.image','video.title', 'video.views','video.rating','users.name')
+            ->leftJoin('users', 'users.id', '=', 'podcast.author')
+            ->select('podcast.id','podcast.url','podcast.image','podcast.title', 'podcast.views','podcast.rating','users.name')
             ->get();
 
         $dataToview = $video[0];
 
 
+        $currentURL = URL::current();
 
-        $comments = Comment::where('videoid','=',$video[0]->id)
-            ->join('users', 'users.id', '=', 'comment.author')
-            ->select('comment.id','comment.text','users.name', 'comment.likes', 'comment.dislikes')
-            ->orderBy('id','desc')
+
+        return view('public.podcast')
+            ->with('data', $dataToview)
+            ->with('currenturl', $currentURL);
+    }
+
+    public function live(Request $request)
+    {
+
+        $video = Live::where('live.id','=',$request->videoid)
+            ->leftJoin('users', 'users.id', '=', 'live.author')
+            ->select('live.id','live.url','live.image','live.title', 'live.views','live.rating','users.name')
             ->get();
 
-        $randomVideos = Video::inRandomOrder()
-            ->limit(5)
-            ->join('users', 'users.id', '=', 'video.author')
-            ->select('video.id','video.title','video.rating','video.image','users.name')
-            ->get();
+        $dataToview = $video[0];
+
 
         $currentURL = URL::current();
 
 
-        return view('public.video')
+        return view('public.live')
             ->with('data', $dataToview)
-            ->with('currenturl', $currentURL)
-            ->with('comments',$comments)
-            ->with('paravernasequencia',$randomVideos);
+            ->with('currenturl', $currentURL);
     }
 
     public function busca(Request $request)
     {
 
-        return view('public.busca')->with('term', 'asd');
+
+            $table = Video::where('title','LIKE', ('%'.$request->get('search').'%'))
+                            ->join('users', 'users.id', '=', 'video.author')
+                            ->select('video.id','video.title', 'video.image','video.rating','users.name')
+                            ->get();
+
+
+
+        return view('public.busca')->with('obj',$table)->with('term', $request->get('search'));
+
     }
 
 }

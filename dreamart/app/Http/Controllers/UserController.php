@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Bill;
+use App\Models\Setup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -202,5 +203,34 @@ class UserController extends Controller
 
         ]);
 
+    }
+
+    public function cadastrar(Request $request)
+    {
+        $user = new User();
+        $user->name = $request->post('name');
+        $user->email = $request->post('email');
+        $user->type = 'user';
+        $user->active = true;
+
+        $hashed = Hash::make($request->post('password'));
+        $user->password =$hashed;
+
+        $user->save();
+
+
+        $setup = Setup::where('key','=','price')->get();
+        $price = $setup[0]->value;
+
+
+        $bill = new Bill();
+        $bill->user = $user->id;
+        $bill->month = date('m-Y');
+        $bill->value = $price;
+        $bill->status = true;
+        $bill->return = 'Pagamento aprovado em modo sandbox';
+        $bill->save();
+
+        return redirect('/login?welcome=true');
     }
 }

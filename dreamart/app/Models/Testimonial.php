@@ -24,5 +24,5 @@ class Testimonial extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'estimonial','avatar'];
+    protected $fillable = ['name', 'testimonial','avatar'];
 }

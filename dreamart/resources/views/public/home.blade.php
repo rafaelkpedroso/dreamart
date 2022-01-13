@@ -192,7 +192,7 @@
 
   </section>
 
-  <section id="como-funciona">
+  <!--section id="como-funciona">
 
    <div class="container">
 
@@ -253,7 +253,7 @@
 
   </div>
 
-  </section>
+  </section-->
 
   <section id="faq">
 
@@ -291,70 +291,25 @@
      <div class="col-lg-8" id="ppd-container">
       <p class="title text-center">PPD Casts</p>
 
-      <div class="row" style="position: relative">
-       <div class="col-lg-1 ppd-gray"></div>
+      @foreach($podcasts as $podcast)
+       <a href="/podcasts/{{$podcast->id}}">
+       <div class="row" style="position: relative">
+
+       <div class="col-lg-1 ppd-gray" style="background-image: url(/img/videos/{{$podcast->image}}); background-size: cover;">
+
+       </div>
        <div class="col-lg-1 m-auto text-center orange">1</div>
-       <div class="col-lg-6  m-auto">
-        <span>Alimentação antes da Luta</span><br>
-        Action, thriller
+       <div class="col-lg-10  m-auto">
+        <span>{{$podcast->title}}</span><br>
+        BJJ
        </div>
-       <div class="col-lg-2 m-auto text-center">31.1M</div>
-       <div class="col-lg-2 m-auto text-center">3 WEEK</div>
 
        <div class="ppd-bolinha"></div>
+
       </div>
+       </a>
+      @endforeach
 
-      <div class="row" style="position: relative">
-       <div class="col-lg-1 ppd-gray"></div>
-       <div class="col-lg-1 m-auto text-center orange">2</div>
-       <div class="col-lg-6  m-auto">
-        <span>Alimentação antes da Luta</span><br>
-        Action, thriller
-       </div>
-       <div class="col-lg-2 m-auto text-center">31.1M</div>
-       <div class="col-lg-2 m-auto text-center">3 WEEK</div>
-
-       <div class="ppd-bolinha"></div>
-      </div>
-
-      <div class="row" style="position: relative">
-       <div class="col-lg-1 ppd-gray"></div>
-       <div class="col-lg-1 m-auto text-center orange">3</div>
-       <div class="col-lg-6  m-auto">
-        <span>Alimentação antes da Luta</span><br>
-        Action, thriller
-       </div>
-       <div class="col-lg-2 m-auto text-center">31.1M</div>
-       <div class="col-lg-2 m-auto text-center">3 WEEK</div>
-
-       <div class="ppd-bolinha"></div>
-      </div>
-
-      <div class="row" style="position: relative">
-       <div class="col-lg-1 ppd-gray"></div>
-       <div class="col-lg-1 m-auto text-center orange">4</div>
-       <div class="col-lg-6  m-auto">
-        <span>Alimentação antes da Luta</span><br>
-        Action, thriller
-       </div>
-       <div class="col-lg-2 m-auto text-center">31.1M</div>
-       <div class="col-lg-2 m-auto text-center">3 WEEK</div>
-
-       <div class="ppd-bolinha"></div>
-      </div>
-
-      <div class="row" style="position: relative">
-       <div class="col-lg-1 ppd-gray"></div>
-       <div class="col-lg-1 m-auto text-center orange">5</div>
-       <div class="col-lg-6  m-auto">
-        <span>Alimentação antes da Luta</span><br>
-        Action, thriller
-       </div>
-       <div class="col-lg-2 m-auto text-center">31.1M</div>
-       <div class="col-lg-2 m-auto text-center">3 WEEK</div>
-
-       <div class="ppd-bolinha"></div>
-      </div>
 
 
      </div>
@@ -366,59 +321,27 @@
 
        <div class="carousel-depoimentos-container">
         <ol>
-         <li data-slide="1">
-          <img src="/img/jiujiteiro.png">
+         @foreach($depoimentos as $depo)
+         <li data-slide="{{$depo->id}}">
+          <img src="/img/testimonials/{{$depo->image}}" class="depo-avatar">
 
           <div class="depoimento">
           <img class="depoimento-quote-left" src="/img/quote-left.png"/>
-           111 lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+           {{$depo->testimonial}}
            <img class="depoimento-quote-right" src="/img/quote-right.png"/>
           </div>
 
          </li>
-         <li data-slide="2">
-          <img src="/img/jiujiteiro.png">
+         @endforeach
 
-          <div class="depoimento">
-           <img class="depoimento-quote-left" src="/img/quote-left.png"/>
-           222 lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           <img class="depoimento-quote-right" src="/img/quote-right.png"/>
-          </div>
-
-         </li>
-         <li data-slide="3">
-          <img src="/img/jiujiteiro.png">
-
-          <div class="depoimento">
-           <img class="depoimento-quote-left" src="/img/quote-left.png"/>
-           333 lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           <img class="depoimento-quote-right" src="/img/quote-right.png"/>
-          </div>
-
-         </li>
-         <li data-slide="4">
-          <img src="/img/jiujiteiro.png">
-
-          <div class="depoimento">
-           <img class="depoimento-quote-left" src="/img/quote-left.png"/>
-           444 lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-           <img class="depoimento-quote-right" src="/img/quote-right.png"/>
-          </div>
-
-         </li>
         </ol>
        </div>
 
        <div class="carousel-depoimentos-nav">
         <ol>
-         <li class="active" data-slide="1"></li>
-         <li data-slide="2"></li>
-         <li data-slide="3"></li>
-         <li data-slide="4"></li>
+         @foreach($depoimentos as $depo)
+          <li data-slide="{{$depo->id}}"></li>
+          @endforeach
         </ol>
        </div>
 

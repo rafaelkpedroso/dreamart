@@ -56,7 +56,7 @@
 
         }
     </style>
-    <div class="mockup" style="margin-top:120px; margin-bottom: 120px;">
+    <div class="mockup" style="margin-top:120px; margin-bottom: 120px;  min-height: 50vh;">
         <div class="container-fluid">
 
 
@@ -71,11 +71,17 @@
 
 
 
+            <div class="row bgpreto">
+                <div class="col-lg-12">
 
-            @foreach($obj as $v)
-                @include('public.parts.thumbnaillive')
+                    <div class="container">
+                        @foreach($obj as $v)
+                            @include('public.parts.thumbnaillive')
 
-            @endforeach
+                        @endforeach
+                    </div>
+                </div>
+            </div>
 
             </div>
 

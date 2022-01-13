@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Adicionar Depoimento') }}</h5>
                 </div>
-                <form method="post" action="/admin/testimonials/store" autocomplete="off">
+                <form method="post" action="/admin/testimonials/store" autocomplete="off"  enctype="multipart/form-data">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -27,6 +27,12 @@
 
                                 @include('admin.alerts.feedback', ['field' => 'testimonial'])
                             </div>
+
+                        <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                            <label>{{ __('Imagem') }}</label>
+                            <input type="file" name="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" placeholder="{{ __('Imagem') }}"  required value="">
+                            @include('admin.alerts.feedback', ['field' => 'image'])
+                        </div>
 
 
                     </div>

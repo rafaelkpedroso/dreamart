@@ -16,7 +16,7 @@
 
                             <div class="form-group{{ $errors->has('url') ? ' has-danger' : '' }}">
                                 <label>{{ __('URL do Vimeo') }}</label>
-                                <input type="text" name="url" class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}" placeholder="{{ __('https://vimeo.com/12045532') }}" required value="">
+                                <input type="text" name="url" class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}" placeholder="{{ __('https://player.vimeo.com/video/12045532') }}" required value="">
 
                                 @include('admin.alerts.feedback', ['field' => 'url'])
                             </div>

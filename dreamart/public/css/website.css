@@ -764,3 +764,9 @@ textarea{
     color:#fb792c;
     font-weight: bold;
 }
+
+.depo-avatar{
+    width: 204px;
+    height:204px;
+    border-radius: 200px;
+}

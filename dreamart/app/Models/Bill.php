@@ -20,4 +20,6 @@ class Bill extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+
+    protected $fillable = ['user', 'month','value','status','return'];
 }

@@ -57,15 +57,15 @@
                     </div>
                     <div class="col-lg-3 m-auto">
                         <div class="profile">
-
+                            <div id="profileinfo">
                             @if(Auth::user())
                                 <span class="profilepic"></span>
                                 {{ Auth::user()->name  }}
                             @else
                                 <a href="/login">Entre</a> ou <a href="planos">crie sua conta</a>
                             @endif
-
-                                <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"/>
+                            </div>
+                            <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"/>
                         </div>
                     </div>
 

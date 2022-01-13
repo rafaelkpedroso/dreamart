@@ -21,7 +21,14 @@
                                                         height:100%">
 
                     <form class="daform" method="post" action="{{ route('login') }}">
-                        <h1>Login</h1>
+
+                        @if(isset($_GET['welcome']))
+                            <h1>Bem-vindo!</h1>
+                            <p>Seu cadastro foi criado com sucesso. Você já pode aproveitar todo o conteúdo da plataforma.</p>
+                        @else
+                            <h1>Login</h1>
+                        @endif
+
                         @csrf
 
                             <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">

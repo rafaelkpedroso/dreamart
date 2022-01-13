@@ -44,10 +44,10 @@
                             <tbody>
                             @foreach ($data as $row)
                                 <tr>
-                                    <td>{{$row['user']}}</td>
+                                    <td>{{$row['email']}}</td>
                                     <td>{{$row['month']}}</td>
-                                    <td>{{$row['value']}}</td>
-                                    <td>{{$row['status']}}</td>
+                                    <td>US$ {{number_format($row['value'], 2, ',', ' ') }}</td>
+                                    <td>{{$row['status']==1?'Sucesso':'Fracasso'}}</td>
                                 </tr>
                             @endforeach
 

@@ -101,6 +101,12 @@ class TestimonialController extends Controller
         $testimonial->testimonial = $request->post('testimonial');
         $testimonial->save();
 
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img/testimonials'), $imageName);
+
+        $testimonial->image = $imageName;
+        $testimonial->save();
+
         return redirect('/admin/testimonials');
     }
 
@@ -143,6 +149,14 @@ class TestimonialController extends Controller
         $testimonial->name = $request->post('name');
         $testimonial->testimonial = $request->post('testimonial');
         $testimonial->update();
+
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img/testimonials'), $imageName);
+            $testimonial->image = $imageName;
+            $testimonial->update();
+        }
+
         return redirect('/admin/testimonials');
 
     }

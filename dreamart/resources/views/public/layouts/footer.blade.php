@@ -11,7 +11,7 @@
                     <ol style="padding-top:20px">
                         <li><a href="/quemsomos">Quem Somos</a></li>
                         <li><a href="/faq">FAQ</a></li>
-                        <li><a href="mailto:dreamart@dreamart.com">Fale Conosco</a></li>
+                        <li><a href="mailto:dreamart@dreamarttv.com">Fale Conosco</a></li>
                     </ol>
                 </div>
                 <div class="col-lg-3">

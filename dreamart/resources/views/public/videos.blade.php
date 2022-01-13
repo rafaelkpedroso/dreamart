@@ -23,6 +23,7 @@
             font-size: 18px;
             line-height: 18px;
             white-space: normal;
+            margin-top:20px;
         }
         .videogrid{
             padding: 40px;
@@ -56,7 +57,7 @@
 
         }
     </style>
-    <div class="mockup" style="margin-top:120px; margin-bottom: 120px;">
+    <div class="mockup" style="margin-top:120px; margin-bottom: 120px;  min-height: 50vh;">
         <div class="container-fluid">
 
 

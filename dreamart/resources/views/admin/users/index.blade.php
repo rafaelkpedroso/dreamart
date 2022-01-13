@@ -69,8 +69,9 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/admin/users/bills/{{$row['id']}}">Cobranças</a>
                                                 <a class="dropdown-item" href="/admin/users/edit/{{$row['id']}}">Editar</a>
+                                                <a class="dropdown-item" href="/admin/users/bills/{{$row['id']}}">Cobranças</a>
+                                                <a class="dropdown-item" >Cobrar Novamente</a>
                                                 <a class="dropdown-item deletebutton" href="/admin/users/delete/{{$row['id']}}">Excluir</a>
                                             </div>
                                         </div>

@@ -31,7 +31,10 @@ class BillsController extends Controller
         $currentPage = $request->get('p')?$request->get('p'):1;
         $skip = ($currentPage-1)*$rowsPerPage;
 
-        $dataSet = $table->skip($skip)->take($rowsPerPage)->get();
+        $dataSet = $table
+            ->join('users', 'users.id', '=', 'bill.user')
+            ->select('bill.id','bill.month','bill.value','bill.status','bill.return','users.email')
+            ->skip($skip)->take($rowsPerPage)->get();
 
         $tablevars['sortable'] = 'title';
         return view('admin.bills.index', ['data' => $dataSet,
