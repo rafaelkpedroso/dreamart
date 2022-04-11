@@ -10,7 +10,7 @@
    <div class="carousel-full-container">
      <ol>
 
-      <li style="background-image: url(/img/bg001.png)" data-slide="1">
+      <li style="background-image: url(/img/dreamart-novo02.jpeg)" data-slide="1">
        <div class="container">
 
         <p class="title animate__animated animate__fadeInUp">
@@ -19,8 +19,8 @@
         </p>
 
         <p class="animate__animated animate__fadeInUp animate__slow">
-         Mais de 300 vídeos. Atualizações mensais para uma experiência única<br/>
-         com aulas, treinos, posições, perfis dos atletas e muito mais!<br/>
+         Mais de 200 vídeos. Atualizações mensais para uma experiência única com aulas, <br/>
+         treinos, posições, perfis dos atletas e muito mais!<br/>
          Aprenda com os melhores e mais criativos lutadores.
         </p>
 
@@ -103,11 +103,9 @@
      <div class="carousel-text-container">
       <ol>
        <li data-slide="1" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Treinos e Competições 1 </p>
+        <p class="orange title">Treinos e Competições</p>
         <p>
-         Mais de XX vídeos narrados com links direto para
-         as posições da biblioteca, onde você assiste da sua
-         casa quantas vezes quiser.
+         MAIS DE 200 VÍDEOS NARRADOS PARA VOCÊ ASSISTIR  DA SUA CASA QUANTAS VEZES QUISER.
         </p>
        </li>
 
@@ -147,7 +145,7 @@
    </div>
   </section>
 
-  <section id="consultoria">
+  <section id="consultoria" style="display:none">
 
    <div class="container consultoria-bg">
 

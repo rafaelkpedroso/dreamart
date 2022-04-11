@@ -47,4 +47,10 @@
     #profileinfo{
         display: none;
     }
+
+
+    header{
+        position: fixed;
+        padding-right: 20px;
+    }
 }

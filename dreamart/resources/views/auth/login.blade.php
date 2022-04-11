@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-lg-6" style="   background-image: url(/img/bg004.png);
+            <div class="col-lg-6" style="   background-image: url(/img/dreamart-novo05.jpeg);
                                             background-repeat: no-repeat;
                                             background-position: center center;
                                             background-size: cover;
