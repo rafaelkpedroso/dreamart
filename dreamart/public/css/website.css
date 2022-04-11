@@ -576,7 +576,7 @@ header #menucontainer .hamburguer{
 /* home */
 
 section#video-manifest{
-    background-image: url('/img/bg004.png');
+    background-image: url('/img/dreamart-novo04.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -586,6 +586,7 @@ section#video-manifest{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    margin-top: -20px;
 }
 
 section#video-manifest .btnplay{
@@ -600,7 +601,7 @@ section#video-manifest .btnplay:hover {
 }
 
 section#conheca-o-time{
-    background-image: url('/img/bg005.jpg');
+    background-image: url('/img/dreamart-novo01a.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -613,7 +614,7 @@ section#conheca-o-time{
 }
 
 section#consultoria .consultoria-bg{
-    background-image: url('/img/bg006.jpg');
+    background-image: url('/img/dreamart-novo03.jpeg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: unset;
@@ -622,6 +623,7 @@ section#consultoria .consultoria-bg{
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    background-size: 400px;
 }
 
 section#como-funciona{
@@ -749,7 +751,7 @@ textarea{
 .videogrid-video-overlay{
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
     width: 100%;
-    height: 100%;
+    height: 100%
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
