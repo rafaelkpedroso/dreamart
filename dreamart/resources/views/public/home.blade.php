@@ -110,20 +110,34 @@
        </li>
 
        <li data-slide="2" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Treinos e Competições 2</p>
+        <p class="orange title">Técnicas de Jiu-jitsu</p>
         </p>
-         Mais de XX vídeos narrados com links direto para
-         as posições da biblioteca, onde você assiste da sua
-         casa quantas vezes quiser.
+        CONTEÚDOS COM LEGENDA EM INGLÊS E LEGENDA TÉCNICA
         </p>
        </li>
 
        <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Treinos e Competições 3</p>
+        <p class="orange title">Categorização</p>
         </p>
-         Mais de XX vídeos narrados com links direto para
-         as posições da biblioteca, onde você assiste da sua
-         casa quantas vezes quiser.
+        ENCONTRE FACILMENTE O CONTEÚDO QUE VOCÊ BUSCA. VÍDEOS CATEGORIZADOS POR ATLETAS OU
+        POR GOLPES
+        </p>
+       </li>
+
+       <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
+        <p class="orange title">Mentalidade de Competição</p>
+        </p>
+        OPORTUNIDADE DE OBSERVAR O MINDSET DOS NOSSOS
+        CAMPEÕES
+        </p>
+       </li>
+
+
+       <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
+        <p class="orange title">Qualidade</p>
+        </p>
+        VÍDEOS EM ALTA RESOLUÇÃO DESENVOLVIDOS POR PROFESSORES E ATLETAS
+        PROFISSIONAIS
         </p>
        </li>
 
@@ -265,44 +279,40 @@
       <ul class="dreamart-accordion">
 
        <li>
-        <p>Como faço para acessar meus Planos e Preços?<i></i></p>
-        <span>Lorem Ipsum</span>
-       </li>
-       <li>
-        <p>Recebi um e-mail dizendo que houve um novo acesso à minha conta. O que fazer? <i></i></p>
-        <span>Lorem Ipsum</span>
+        <p>Como faço para acessar minha assinatura?<i></i></p>
+        <span>Basta preencher seu login e senha no canto superior de todas as telas de www.drearttv.com </span>
        </li>
        <li>
         <p>Quero saber sobre cobranças e pagamentos<i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a> </span>
        </li>
        <li>
         <p>Minha conta está suspensa por falta de pagamento. O que fazer?<i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a></span>
        </li>
        <li>
         <p>Posso mudar o modo de pagamento de minhas contas?<i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Você poderá alterar os dados do cartão de crédito associado à sua conta em Meu perfil, após seu login.</span>
        </li>
 
        <li>
         <p>Tive uma cobrança indevida. Como resolver? <i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a></span>
        </li>
 
        <li>
         <p>Problemas de conexão <i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Procure conectar a outra fonte de internet. Geralmente acessos cabeados têm performance melhor do que internet wifi.</span>
        </li>
 
        <li>
         <p>Minhas páginas estão travando <i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Procure conectar a outra fonte de internet. Geralmente acessos cabeados têm performance melhor do que internet wifi.</span>
        </li>
 
        <li>
         <p>Como faço para mudar meu login e senha?<i></i></p>
-        <span>Lorem Ipsum</span>
+        <span>Você pode alterar seus dados acessando o Meu Perfil, após seu login.</span>
        </li>
 
       </ul>
