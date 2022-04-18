@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-lg-4 offset-1">
-                    <div style="display:flex;     flex-wrap: nowrap;  align-content: flex-start; height: 100%;     flex-direction: column;     justify-content: center; text-align: right">
+                    <div id="quemsomos-txt">
                     <h1>Quem Somos</h1>
 
                     <p>
