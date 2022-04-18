@@ -52,4 +52,36 @@
     header{
         position: fixed;
     }
+
+    .carousel-text-left{
+        top:80%;
+    }
+    .carousel-text-right{
+        top:80%;
+    }
+    .carousel-text-nav{
+        bottom:5%;
+    }
+    .carousel-text .carousel-text-container {
+        width: 70%;
+        margin-left: 15%;
+    }
+    .carousel-text .carousel-text-container ol li{
+        width:90%;
+        overflow-x: hidden;
+    }
+
+    .dreamart-accordion li{
+        position: relative;
+    }
+    .dreamart-accordion li p i{
+        position: absolute;
+        right: 15px;
+        top: 25px;
+    }
+
+    .carousel-depoimentos{
+    padding-top:40px;
+    margin-bottom:40px;
+    }
 }

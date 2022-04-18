@@ -82,23 +82,32 @@
   </section>
 
   <section id="conheca-o-time">
-   <div class="container">
 
-    <p class="title">
+   <div class="carousel-text-left">
+    <img src="/img/arrow-left.png" />
+   </div>
+   <div class="carousel-text-right">
+    <img src="/img/arrow-right.png" />
+   </div>
+
+   <div class="carousel-text-nav">
+    <ol>
+     <li class="active" data-slide="1"></li>
+     <li data-slide="2"></li>
+     <li data-slide="3"></li>
+     <li data-slide="4"></li>
+     <li data-slide="5"></li>
+    </ol>
+   </div>
+
+   <div class="container">
+   <p class="title">
      Conheça o time <br/>
      Dream Art
     </p>
 
     <div class="carousel-text">
 
-     <div class="carousel-text-left">
-
-       <img src="/img/arrow-left.png" />
-
-     </div>
-     <div class="carousel-text-right">
-       <img src="/img/arrow-right.png" />
-     </div>
 
      <div class="carousel-text-container">
       <ol>
@@ -124,7 +133,7 @@
         </p>
        </li>
 
-       <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
+       <li data-slide="4" class="animate__animated animate__slower animate__fadeIn">
         <p class="orange title">Mentalidade de Competição</p>
         </p>
         OPORTUNIDADE DE OBSERVAR O MINDSET DOS NOSSOS
@@ -133,7 +142,7 @@
        </li>
 
 
-       <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
+       <li data-slide="5" class="animate__animated animate__slower animate__fadeIn">
         <p class="orange title">Qualidade</p>
         </p>
         VÍDEOS EM ALTA RESOLUÇÃO DESENVOLVIDOS POR PROFESSORES E ATLETAS
@@ -143,14 +152,6 @@
 
       </ol>
      </div>
-
-     <div class="carousel-text-nav">
-      <ol>
-       <li class="active" data-slide="1"></li>
-       <li data-slide="2"></li>
-       <li data-slide="3"></li>
-      </ol>
-    </div>
 
 
 

@@ -246,15 +246,18 @@ nav ul li img{
 .carousel-text .carousel-text-container ol li.active{
     display: flex;
 }
-.carousel-text .carousel-text-nav{
+.carousel-text-nav{
     text-align: left;
-    margin-top: -160px;
+    bottom: 20%;
+    position: absolute;
+    left: 10%;
+    z-indez: 99999;
 }
-.carousel-text .carousel-text-nav ol{
+.carousel-text-nav ol{
     margin: 0px;
     padding: 0px;
 }
-.carousel-text .carousel-text-nav ol li{
+.carousel-text-nav ol li{
     border: solid 1px white;
     list-style: none;
     width: 8px;
@@ -265,35 +268,37 @@ nav ul li img{
     cursor: pointer;
     transition: transform .2s; /* Animation */
 }
-.carousel-text .carousel-text-nav ol li:hover {
+.carousel-text-nav ol li:hover {
     transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 
 }
-.carousel-text .carousel-text-nav ol li.active{
+.carousel-text-nav ol li.active{
      border: solid 1px #fb792c;
  }
 
-.carousel-text .carousel-text-left{
+.carousel-text-left{
     position: absolute;
-    left: -80px;
+    left: 10px;
     top: 50%;
     transform: translate(-50%, 0);
     transition: transform .2s; /* Animation */
     cursor: pointer;
+    z-index: 99999;
 }
-.carousel-text .carousel-text-left:hover {
+.carousel-text-left:hover {
     transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.carousel-text .carousel-text-right{
+.carousel-text-right{
+    z-index: 99999;
     position: absolute;
-    right: -120px;
+    right: -22px;
     top: 50%;
     transform: translate(-50%, 0);
     transition: transform .2s; /* Animation */
     cursor: pointer;
 }
-.carousel-text .carousel-text-right:hover {
+.carousel-text-right:hover {
     transform: translate(-50%, 0) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
@@ -611,6 +616,7 @@ section#conheca-o-time{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    position: relative;
 }
 
 section#consultoria .consultoria-bg{
