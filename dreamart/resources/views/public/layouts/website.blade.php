@@ -39,7 +39,7 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-12 col-sm-12">
                         <a href="/">
                             <div id="logo">
                                 <h1>Dream Art</h1>
@@ -55,7 +55,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-3 m-auto">
+                    <div class="col-lg-3 col-md-12 col-sm-12 m-auto">
                         <div class="profile">
 
                             @if(Auth::user())
