@@ -179,7 +179,7 @@
                                             <input id="expirationdate" type="text"  inputmode="numeric">
                                         </div>
                                         <div class="field-container">
-                                            <label for="securitycode">Código de Segurança</label>
+                                            <label for="securitycode">Código</label>
                                             <input id="securitycode" type="text"  inputmode="numeric">
                                         </div>
                                     </div>
