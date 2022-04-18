@@ -13,7 +13,7 @@
                                             height: 60vh;">
             </div>
 
-            <div class="col-lg-4 offset-1" style="">
+            <div class="col-lg-4 lg-offset-1 md-offset-0" style="">
                 <div class="login-container" style="    display:flex;
                                                         flex-direction: column;
                                                         flex-wrap: nowrap;
