@@ -8,9 +8,9 @@
 
             <div class="col-lg-6" style="   background-image: url(/img/dreamart-novo05.jpeg);
                                             background-repeat: no-repeat;
-                                            background-position: center center;
+                                            background-position: top center;
                                             background-size: cover;
-                                            height: 60vh;">
+                                            height: 60vh; padding:40px;">
             </div>
 
             <div class="col-lg-4 lg-offset-1 md-offset-0" style="">

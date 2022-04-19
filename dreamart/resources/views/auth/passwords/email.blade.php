@@ -8,7 +8,7 @@
 
                 <div class="col-lg-6" style="   background-image: url(/img/bg004.png);
                                             background-repeat: no-repeat;
-                                            background-position: center center;
+                                            background-position: top center;
                                             background-size: cover;
                                             height: 60vh;">
                 </div>
@@ -18,7 +18,7 @@
                                                         flex-direction: column;
                                                         flex-wrap: nowrap;
                                                         justify-content: center;
-                                                        height:100%">
+                                                        height:100%; padding:40px;">
 
                         <form class="daform" method="post" action="{{ route('password.email') }}">
                             @csrf
