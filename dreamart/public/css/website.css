@@ -227,7 +227,7 @@ nav ul li img{
 .carousel-text .carousel-text-container ol {
     width: 100%;
     padding: 0px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     max-height: 100vh;
 }
 .carousel-text .carousel-text-container ol li{
@@ -315,7 +315,7 @@ nav ul li img{
 .carousel-depoimentos .carousel-depoimentos-container ol {
     width: 100%;
     padding: 0px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     max-height: 100vh;
 }
 .carousel-depoimentos .carousel-depoimentos-container ol li{

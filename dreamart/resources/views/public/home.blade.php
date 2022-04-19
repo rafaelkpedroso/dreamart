@@ -32,23 +32,23 @@
        </div>
       </li>
 
-      <li style="background-image: url(/img/bg002.png)" data-slide="2">
-       <div class="container">
-        <p class="title animate__animated animate__fadeInUp">
-         <span class="orange">Melhores posições.</span><br/>
-        </p>
+      {{--<li style="background-image: url(/img/bg002.png)" data-slide="2">--}}
+       {{--<div class="container">--}}
+        {{--<p class="title animate__animated animate__fadeInUp">--}}
+         {{--<span class="orange">Melhores posições.</span><br/>--}}
+        {{--</p>--}}
 
-        <p class="animate__animated animate__fadeInUp animate__slow">
-         Mais de 300 vídeos.
-        </p>
+        {{--<p class="animate__animated animate__fadeInUp animate__slow">--}}
+         {{--Mais de 300 vídeos.--}}
+        {{--</p>--}}
 
 
-        <a href="/planos" class="btn btnorange animate__animated animate__fadeInUp animate__slower">
-         Faça parte
-        </a>
+        {{--<a href="/planos" class="btn btnorange animate__animated animate__fadeInUp animate__slower">--}}
+         {{--Faça parte--}}
+        {{--</a>--}}
 
-       </div>
-      </li>
+       {{--</div>--}}
+      {{--</li>--}}
 
 
      </ol>
@@ -57,7 +57,7 @@
    <div class="carousel-full-nav">
     <ol>
      <li class="active" data-slide="1"></li>
-     <li data-slide="2"></li>
+     {{--<li data-slide="2"></li>--}}
     </ol>
    </div>
 

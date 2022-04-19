@@ -16,13 +16,13 @@
                 </div>
                 <div class="col-lg-3">
                     <ol>
-                        <li><a href="https://fb.com/rafaelkpedroso" target="_blank">
+                        <li><a href="https://instagram.com/dream.art.project?igshid=YmMyMTA2M2Y=" target="_blank">
                                 <img src="/img/footer-fb.png" about="Facebook" />
                             </a></li>
-                        <li><a href="https://www.instagram.com/rafaelkpedroso/" target="_blank">
+                        <li><a href="https://instagram.com/dream.art.project?igshid=YmMyMTA2M2Y=" target="_blank">
                                 <img src="/img/footer-insta.png" about="Instagram" />
                             </a></li>
-                        <li><a href="https://twitter.com/rafaelkpedroso" target="_blank">
+                        <li><a href="https://instagram.com/dream.art.project?igshid=YmMyMTA2M2Y=" target="_blank">
                                 <img src="/img/footer-twitter.png" about="Twitter" />
                             </a></li>
                     </ol>
