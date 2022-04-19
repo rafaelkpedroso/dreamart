@@ -174,7 +174,7 @@
      <div class="col-lg-6 offset-lg-4">
       <p>
        Quem é atleta também pode contratar uma consultoria com o nosso time de profissionais.
-       Ela pode incluir: 
+       Ela pode incluir:
 
        <ul class="ulorange">
         <li>
