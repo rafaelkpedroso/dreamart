@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Video;
 use App\Models\Podcast;
 use App\Models\Live;
@@ -11,6 +12,7 @@ use App\Models\Setup;
 use App\Models\Taxonomy;
 use App\Models\Comment;
 use App\Models\Testimonial;
+
 
 
 class WebsiteController extends Controller
@@ -21,7 +23,7 @@ class WebsiteController extends Controller
      * @return \Illuminate\View\View
      */
     public function home()
-    {
+    {       
 
         $podcasts = Podcast::
             join('users', 'users.id', '=', 'podcast.author')

@@ -7,6 +7,35 @@ use DB;
 
 class VideoSeeder extends Seeder
 {
+
+    public static function slugify($text, string $divider = '-'){
+        // replace non letter or digits by divider
+        $text = preg_replace('~[^\pL\d]+~u', $divider, $text);
+
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+
+        // trim
+        $text = trim($text, $divider);
+
+        // remove duplicate divider
+        $text = preg_replace('~-+~', $divider, $text);
+
+        // lowercase
+        $text = strtolower($text);
+
+        if (empty($text)) {
+            return 'n-a';
+        }
+
+        return $text;
+    }
+
+
+
     /**
      * Run the database seeds.
      *
@@ -14,32 +43,30 @@ class VideoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('video')->insert([
-            'id' => '1',
-            'slug' => 'grappling-dummies-2-bjj-in-japan',
-            'title' => 'Grappling Dummies 2.0 BJJ in Japan',
-            'author' => '2', // Kyra Gracie
-            'url' => 'https://player.vimeo.com/video/8975562',
-            'views' => 122,
-            'rating' => 3
-        ]);
 
-        DB::table('video')->insert([
-            'id' => '2',
-            'slug' => 'bjj-straight-ankle-lock',
-            'title' => 'BJJ: Straight Ankle Lock Basics for BJJ',
-            'author' => '2', // Kyra Gracie
-            'url' => 'https://player.vimeo.com/video/8366926',
-        ]);
+        $file = file_get_contents( base_path().'/public/csv/stats_export.csv');
+        $lines = explode("\n",$file);
+        $first = true;
+        foreach($lines as $line){
+            if($first){
+                $first = false;
+            } else {
+                    
+                $columns = explode(",",$line);
+                $url = $columns[6];
+                $title = str_replace('"','',$columns[7]);
 
-        DB::table('video')->insert([
-            'id' => '3',
-            'slug' => 'bjj-old-school',
-            'title' => 'BJJ Old School',
-            'author' => '3', // Demian Maia
-            'url' => 'https://player.vimeo.com/video/190272631',
-            'views' => 31233,
-            'rating' => 3.5
-        ]);
+                DB::table('video')->insert([
+                    'slug' => $this->slugify($title).rand(1,999999),
+                    'title' => "XXX".$title,
+                    'author' => '1',
+                    'url' => $url,
+                    'views' => 0,
+                    'rating' => 5,
+                    'image' => 'videodefault.jpg'
+                ]);
+
+            }
+        }
     }
 }
