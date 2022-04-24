@@ -73,53 +73,59 @@
 
 
 
-            @foreach($obj as $item)
+                @foreach($obj as $item)
 
-                <div class="row videogrid">
-                    <div class="col-lg-12">
-                    <div class="container">
-                        <p class="title2 orange">{{$item['name']}}</p>
+                    <div class="row videogrid">
+                        <div class="col-lg-12">
+                        <div class="container">
+                            <p class="title2 orange">{{$item['name']}}</p>
+                            
 
+                            @if((is_array($item['videos']) || is_object($item['videos'])))
+                            <div id="videoslist" style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
+                                @foreach($item['videos'] as $video1)
 
-                        @if((is_array($item['videos']) || is_object($item['videos'])))
-                            @foreach($item['videos'] as $video1)
-
-                                @php($v = $video1)
-                                @include('public.parts.thumbnail')
-
-
-                            @endforeach
-                        @endif
+                                    @php($v = $video1)
+                                    @include('public.parts.thumbnail')
 
 
-                        @if((is_array($item['categories']) || is_object($item['categories'])))
-                            @foreach($item['categories'] as $item2)
-                                @if( (is_array($item2['videos']) || is_object($item2['videos'])) && count($item2['videos']) > 0 )
-                            <div class="row" style="margin-bottom: 20px;">
-                                <div class="col-lg-12">
-                                    <p class="title3">{{$item2['name']}}</p>
-
-                                    @if((is_array($item2['videos']) || is_object($item2['videos'])))
-                                        @foreach($item2['videos'] as $video2)
-
-                                            @php($v = $video2)
-                                            @include('public.parts.thumbnail')
-
-                                        @endforeach
-                                    @endif
-
-                                </div>
+                                @endforeach
                             </div>
-                                @endif
-                            @endforeach
-                        @endif
+                            @endif
+                        
+
+                            @if((is_array($item['categories']) || is_object($item['categories'])))
+                                @foreach($item['categories'] as $item2)
+                                    @if( (is_array($item2['videos']) || is_object($item2['videos'])) && count($item2['videos']) > 0 )
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col-lg-12">
+                                        <p class="title3">{{$item2['name']}}</p>
+
+                                        
+                                        @if((is_array($item2['videos']) || is_object($item2['videos'])))
+                                        <div id="videoslist" style="display: flex; flex-wrap: wrap; justify-content: flex-start;">
+                                            @foreach($item2['videos'] as $video2)
+
+                                                @php($v = $video2)
+                                                @include('public.parts.thumbnail')
+
+                                            @endforeach
+                                            </div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                                    @endif
+                                @endforeach
+                            @endif
 
 
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
 
-            @endforeach
+                @endforeach     
+            
 
             </div>
 
