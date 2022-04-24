@@ -6,8 +6,6 @@ body{
     white-space: normal;
     outline: none;
 }
-.content{
-}
 hr{
     color: #fb792c;
     height: 2px;
@@ -129,7 +127,7 @@ nav ul li img{
 
 
 /* buttons */
-.btnorange a:link, a:visited, a:hover, a:active {
+.btnorange a:link, .btnorange  a:visited, .btnorange a:hover, .btnorange  a:active {
     color: #000;
 }
 .button-secondary{
@@ -486,7 +484,6 @@ nav ul li img{
 
 header{
     padding-top: 20px;
-    position: relative;
     width: 100%;
     font-family: Roboto;
     font-weight: lighter;
@@ -755,9 +752,9 @@ textarea{
     border: solid 1px #343434;
 }
 .videogrid-video-overlay{
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
     width: 100%;
-    height: 100%
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -795,4 +792,8 @@ textarea{
     flex-direction: column;
     justify-content: center;
     text-align: right;
+}
+
+.forcez{
+    z-index: 99999999999;
 }

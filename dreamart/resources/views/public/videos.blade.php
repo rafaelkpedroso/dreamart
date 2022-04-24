@@ -41,7 +41,7 @@
             border: solid 1px #343434;
         }
         .videogrid-video-overlay{
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
             width: 100%;
             height: 100%;
             display: flex;

@@ -24,7 +24,7 @@
 
     <style>
 
-        .profile a, a:hover, a:active{
+        .profile a, .profile a:hover, .profile a:active{
             color:#fb792c;
             font-weight: bold;
         }
@@ -64,10 +64,12 @@
                                     {{ Auth::user()->name  }}
                                 </div>
                             @else
-                                <a href="/login">Entre</a> ou <a href="planos">crie sua conta</a>
+                                <a href="/login"  class="forcez">Entre</a> ou <a href="planos"  class="forcez">crie sua conta</a>
                             @endif
 
-                            <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"/>
+                            
+                            <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"  class="forcez"/>
+                        
                         </div>
                     </div>
 
