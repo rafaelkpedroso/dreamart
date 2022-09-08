@@ -52,7 +52,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <a class="cancelar" href="/admin/setups" style="">Cancelar</a>
+                        <a class="cancelar" href="/admin/cms" style="">Cancelar</a>
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Salvar') }}</button>
                     </div>
                 </form>

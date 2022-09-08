@@ -61,6 +61,9 @@ class CmsController extends Controller
      */
     public function create()
     {
+        $authors = User::get();
+        $taxonomies = Taxonomy::get();
+
         return view('admin.cms.add');
     }
 

@@ -12,6 +12,7 @@ use App\Models\Setup;
 use App\Models\Taxonomy;
 use App\Models\Comment;
 use App\Models\Testimonial;
+use App\Models\Cms;
 use Illuminate\Support\Facades\App;
 use Session;
 
@@ -49,7 +50,12 @@ class WebsiteController extends Controller
      */
     public function quemsomos()
     {
-        return view('public.quemsomos');
+
+        $output = $this->getCms(1);
+        
+        return view('public.quemsomos')
+        ->with('data',$output);
+
     }
 
     /**
@@ -64,15 +70,26 @@ class WebsiteController extends Controller
 
     public function legal()
     {
-        return view('public.legal');
+        $output = $this->getCms(2);
+        
+        return view('public.legal')
+        ->with('data',$output);
+
     }
     public function politicadeprivacidade()
     {
-        return view('public.politicadeprivacidade');
+        $output = $this->getCms(3);
+        
+        return view('public.politicadeprivacidade')
+        ->with('data',$output);
+        
     }
     public function cookies()
     {
-        return view('public.cookies');
+        $output = $this->getCms(4);
+        
+        return view('public.cookies')
+        ->with('data',$output);
     }
     public function planos()
     {
@@ -286,6 +303,22 @@ class WebsiteController extends Controller
         Session::put('language', $request->idioma);
         
         return back();
+    }
+
+    private function getCms($id){
+
+        $data = Cms::where('id','=',$id)->first();
+        $output = array();
+
+        if(Session::get('language')=='pt_BR'){
+            $output['title'] = $data['title'];
+            $output['text'] = $data['text'];
+        }else {
+            $output['title'] = $data['title_en'];
+            $output['text'] = $data['text_en'];
+        }
+
+        return $output;
     }
 
 }
