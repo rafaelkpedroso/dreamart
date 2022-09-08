@@ -77,6 +77,12 @@
                     <p>Depoimentos</p>
                 </a>
             </li>
+            <li @if ($pageSlug == 'cms') class="active " @endif>
+                <a href="{{ route('cms.index') }}">
+                    <i class="tim-icons icon-laptop"></i>
+                    <p>CMS</p>
+                </a>
+            </li>
             <li @if ($pageSlug == 'setup') class="active " @endif>
                 <a href="{{ route('setup.index') }}">
                     <i class="tim-icons icon-atom"></i>

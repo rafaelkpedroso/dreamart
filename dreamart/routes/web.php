@@ -130,6 +130,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/setups/edit/{id}', ['as' => 'setup.edit', 'uses' => 'App\Http\Controllers\SetupController@edit']);
     Route::put('/admin/setups/update/{id}', ['as' => 'setup.update', 'uses' => 'App\Http\Controllers\SetupController@update']);
 
+    Route::get('/admin/cms', ['as' => 'cms.index', 'uses' => 'App\Http\Controllers\CmsController@index']);
+    Route::get('/admin/cms/add', ['as' => 'cms.create', 'uses' => 'App\Http\Controllers\CmsController@create']);
+    Route::put('/admin/cms/store', ['as' => 'cms.store', 'uses' => 'App\Http\Controllers\CmsController@store']);
+    Route::get('/admin/cms/delete/{id}', ['as' => 'cms.delete', 'uses' => 'App\Http\Controllers\CmsController@destroy']);
+    Route::get('/admin/cms/edit/{id}', ['as' => 'cms.edit', 'uses' => 'App\Http\Controllers\CmsController@edit']);
+    Route::put('/admin/cms/update/{id}', ['as' => 'cms.update', 'uses' => 'App\Http\Controllers\CmsController@update']);
+
+
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
 Route::get('video/play/{slug}', [VideoController::class, 'play']);
