@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Invalid user and/or password',
-    'password' => 'Wrong password',
-    'throttle' => 'For security reasons, your access was blocked for a few minutes due to excessive access attempts.',
+    'failed' => 'Usuário e/ou senha inválidos',
+    'password' => 'A senha digitada está incorreta',
+    'throttle' => 'Por motivos de segurança, seu acesso foi bloqueado por alguns minutos por tentativas excessivas de acesso.',
 
 ];

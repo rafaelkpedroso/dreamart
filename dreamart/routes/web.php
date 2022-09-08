@@ -39,7 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
-
+// idiomaa
+Route::get('/lang/{idioma}', [WebsiteController::class, 'setLang']);
 
 
 

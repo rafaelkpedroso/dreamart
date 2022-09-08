@@ -23,10 +23,10 @@
                     <form class="daform" method="post" action="{{ route('login') }}">
 
                         @if(isset($_GET['welcome']))
-                            <h1>Bem-vindo!</h1>
-                            <p>Seu cadastro foi criado com sucesso. Você já pode aproveitar todo o conteúdo da plataforma.</p>
+                            <h1>{{ __('Bem-vindo') }}</h1>
+                            <p>{{ __('#Bemivndo[TEXT01]') }}</p>
                         @else
-                            <h1>Login</h1>
+                            <h1>{{ __('Login') }}</h1>
                         @endif
 
                         @csrf
@@ -42,7 +42,7 @@
 
 
                             <button type="submit" href="" >{{ __('Entrar') }}</button>
-                            ou
+                            {{ __('ou') }}
                             <a href="/planos" class="">{{ __('crie sua conta') }}</a>
 
                             <div style="margin-top:20px">

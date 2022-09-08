@@ -23,7 +23,7 @@
                         <form class="daform" method="post" action="{{ route('password.email') }}">
                             @csrf
 
-                            <h1>Recuperar senha</h1>
+                            <h1>{{ __('Recuperar senha') }}</h1>
                             @include('admin.alerts.success')
 
                             <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
@@ -33,8 +33,8 @@
 
 
                             <button type="submit" >{{ __('Solicitar nova senha') }}</button>
-                            ou
-                            <a href="/login">voltar</a>
+                            {{ __('ou') }}
+                            <a href="/login">{{ __('voltar') }}</a>
 
                         </form>
 

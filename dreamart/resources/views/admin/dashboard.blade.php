@@ -38,7 +38,7 @@
             <div class="card card-chart">
                 <div class="card-header">
                     <h5 class="card-category">Entrada de Dinheiro</h5>
-                    <h3 class="card-title"><i class="tim-icons icon-money-coins text-info"></i> 3,500€</h3>
+                    <h3 class="card-title"><i class="tim-icons icon-money-coins text-info"></i> R$ 3,500</h3>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">

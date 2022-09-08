@@ -797,3 +797,6 @@ textarea{
 .forcez{
     z-index: 99999999999;
 }
+.langselector{
+    width: 18px;
+}

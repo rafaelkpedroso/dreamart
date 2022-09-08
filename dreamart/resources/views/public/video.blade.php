@@ -95,7 +95,7 @@
                         <div>
                             <img src="/img/videos/{{{ $data['image'] }}}" style="width:100%; height: auto;" />
                             <div class="paywall">
-                                <a href="/login">Entre</a> ou <a href="planos">crie sua conta</a> para assistir<br/>
+                                <a href="/login">{{ __('Entre') }}</a> {{ __('or') }} <a href="planos">{{ __('crie sua conta') }}</a> {{ __('para assistir') }}<br/>
                             </div>
                         @endif
                     <div class="row robotto" style="margin-top:20px;">
@@ -108,10 +108,9 @@
                             <span class="orange">{{{ $data['date'] }}}</span>
                         </div>
                         <div class="col-lg-2 my-auto">
-                            <span class="orange">{{{ $data['views'] }}} visualizações</span>
+                            <span class="orange">{{{ $data['views'] }}} {{ __('visualizações') }}</span>
                         </div>
                         <div class="col-lg-2  my-auto">
-                            Avaliações<br/>
 
                             @for($i=0; $i<round($data->rating); $i++)
                                 @if(Auth::user())
@@ -139,7 +138,7 @@
                                data-image="/img/videos/{{{ $data['image'] }}}"
                                data-title="{{{ $data['title'] }}}"  >
 
-                                <span class="orange">Compartilhar</span>
+                                <span class="orange">{{ __('Compartilhar') }}</span>
                                 <img src="/img/share-icon.png" />
 
                             </a>
@@ -156,7 +155,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-                        <p class="title3">Deixe seu comentário</p>
+                        <p class="title3">{{ __('Deixe seu comentário') }}</p>
 
                         <div class="comment-form">
                             <form id="comentar-form">
@@ -169,7 +168,7 @@
                                         <textarea name="text" id="text" required></textarea>
                                     </div>
                                     <div class="col-lg-1" style="display: flex; align-items: flex-end; justify-content: flex-start;">
-                                        <input type="submit" value="Comentar" id="comentar" />
+                                        <input type="submit" value="{{ __('Comentar') }}" id="comentar" />
                                     </div>
                                 </div>
                             </form>
@@ -193,11 +192,11 @@
                                                 @csrf
                                                 <input type="hidden" name="videoid" value="{ $c->id }}">
                                                 <textarea name="text" required>{{ $c->text }}</textarea>
-                                                <input type="submit" value="Alterar" class="moderarform-alterar" />
-                                                <input type="button" value="Deletar" class="moderarform-deletar" data-url="/comments/delete/{{ $c->id }}" />
+                                                <input type="submit" value="{{ __('Alterar') }}" class="moderarform-alterar" />
+                                                <input type="button" value="{{ __('Deletar') }}" class="moderarform-deletar" data-url="/comments/delete/{{ $c->id }}" />
                                             </form>
 
-                                            <a href="#" class="moderar" data-idcomment="{{ $c->id }}">  moderar </a>
+                                            <a href="#" class="moderar" data-idcomment="{{ $c->id }}">  {{ __('moderar') }} </a>
                                         @endif
                                     @endif
 
@@ -218,7 +217,7 @@
                                             </div>
                                             <div class="col-lg-9">
                                                 <a id="btn-responder">
-                                                    RESPONDER
+                                                    {{ __('RESPONDER') }}
                                                 </a>
                                             </div>
 
@@ -234,7 +233,7 @@
 
                     </div>
                     <div class="col-lg-3 text-center">
-                        <p class="title3">Para ver na Sequência</p>
+                        <p class="title3">{{ __('Para ver na sequência') }}</p>
 
                         <div class="videogrid">
                         @if((is_array($paravernasequencia) || is_object($paravernasequencia)))
@@ -335,7 +334,7 @@
 
                event.preventDefault();
 
-               if(confirm("Esta ação não pode ser revertida. Deseja prosseguir?")){
+               if(confirm("{{ __('Esta ação não pode ser revertida. Deseja prosseguir?') }}")){
 
                    window.location = $(this).data('url');
                }

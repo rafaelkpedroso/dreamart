@@ -95,7 +95,7 @@
                         <div>
                             <img src="/img/videos/{{{ $data['image'] }}}" style="width:100%; height: auto;" />
                             <div class="paywall">
-                                <a href="/login">Entre</a> ou <a href="planos">crie sua conta</a> para assistir<br/>
+                                <a href="/login">{{ __('Entre') }}</a> {{ __('or') }} <a href="planos">{{ __('crie sua conta') }}</a> {{ __('para assistir') }}<br/>
                             </div>
                         @endif
                     <div class="row robotto" style="margin-top:20px;">
@@ -108,7 +108,7 @@
                             <span class="orange">{{{ $data['date'] }}}</span>
                         </div>
                         <div class="col-lg-2 my-auto">
-                            <span class="orange">{{{ $data['views'] }}} visualizações</span>
+                            <span class="orange">{{{ $data['views'] }}} {{ __('visualizações') }}</span>
                         </div>
                         <div class="col-lg-2  my-auto">
 
@@ -120,7 +120,7 @@
                                data-image="/img/videos/{{{ $data['image'] }}}"
                                data-title="{{{ $data['title'] }}}"  >
 
-                                <span class="orange">Compartilhar</span>
+                               <span class="orange">{{ __('Compartilhar') }}</span>
                                 <img src="/img/share-icon.png" />
                             </a>
                         </div>

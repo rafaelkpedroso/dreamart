@@ -8,8 +8,8 @@
     <div class="container" style="margin-top:120px; ">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 style="margin-top: 40px;">Seja um torcedor e ganhe mais vantagens!</h1>
-                <p>Você terá acesso a todos o conteúdo da plataforma por apenas US$ {{$price}} / mês</p>
+                <h1 style="margin-top: 40px;">{{ __('#Seja um torcedor[TITLE1]') }}</h1>
+                <p>{{ __('#Seja um torcedor[TEXT1]') }} {{$price}} {{ __('#Seja um torcedor[TEXT2]') }}</p>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
             <div class="col-lg-4" style="background-image: url(/img/dreamart-novo03.jpeg); background-size:cover; background-position :center">
             </div>
             <div class="col-lg-8" style="padding:40px 20px;">
-                <h2 class="text-center">Dados Pessoais</h2>
+                <h2 class="text-center">{{ __('Dados Pessoais') }}</h2>
 
                 <form class="daform" action="/cadastrar" method="post">
                     @csrf
@@ -29,30 +29,30 @@
 
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>Nome</label>
+                                        <label>{{ __('Nome') }}</label>
                                         <input type="text" name="name"  id="nome" required />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>E-mail</label>
+                                        <label>{{ __('Email') }}</label>
                                         <input type="email" name="email" id="email" required />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <label>Senha</label>
+                                        <label>{{ __('Senha') }}</label>
                                         <input type="password" name="password" id="password1" required />
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Confirmação de senha</label>
+                                        <label>{{ __('Confirmação de senha') }}</label>
                                         <input type="password" name="password2" id="password2" required />
                                     </div>
                                 </div>
 
 
                             <div class="payment-title">
-                                <h2>Informações de pagamento</h2>
+                                <h2>{{ __('Informações de Pagamento') }}</h2>
                             </div>
 
                             <div class="row">
@@ -76,14 +76,14 @@
                                                     <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                                                 </g>
                                                 <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112</text>
-                                                <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">NOME SOBRENOME</text>
-                                                <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">proprietário do cartão</text>
-                                                <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">validade</text>
-                                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">número do cartão</text>
+                                                <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{ __('NOME SOBRENOME') }}</text>
+                                                <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">{{ __('proprierátio do cartão') }}</text>
+                                                <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">{{ __('validade') }}</text>
+                                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">{{ __('Número do cartão') }}</text>
                                                 <g>
-                                                    <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
-                                                    <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VÁLIDO</text>
-                                                    <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">ATÉ</text>
+                                                    <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">12/28</text>
+                                                    <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">{{ __('VÁLIDO') }}</text>
+                                                    <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">{{ __('ATÉ') }}</text>
                                                     <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
                                                 </g>
                                                 <g id="cchip">
@@ -145,13 +145,13 @@
                                                             <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5" />
                                                             <path class="st5" d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
                                                         </g>
-                                                        <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">985</text>
+                                                        <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">123</text>
                                                         <g class="st8">
-                                                            <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">código</text>
+                                                            <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">{{ __('CVV') }}</text>
                                                         </g>
                                                         <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
                                                         <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
-                                                        <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">Nome Sobrenome</text>
+                                                        <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">{{ __('Nome Sobrenome') }}</text>
                                                     </g>
                                         </svg>
                                             </div>
@@ -163,23 +163,22 @@
 
                                     <div class="form-container">
                                         <div class="field-container">
-                                            <label for="name">Nome (como no cartão)</label>
+                                            <label for="name">{{ __('Nome (como no cartão)') }}</label>
                                             <input id="name" maxlength="20" type="text">
                                         </div>
                                         <div class="field-container">
-                                            <label for="cardnumber">Número do cartão</label>
+                                            <label for="cardnumber">{{ __('Número do cartão') }}</label>
                                             <input id="cardnumber" type="text" inputmode="numeric">
                                             <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink">
-
                                             </svg>
                                         </div>
                                         <div class="field-container">
-                                            <label for="expirationdate">Validade (mm/aa)</label>
+                                            <label for="expirationdate">{{ __('Validade (mm/aa)') }}</label>
                                             <input id="expirationdate" type="text"  inputmode="numeric">
                                         </div>
                                         <div class="field-container">
-                                            <label for="securitycode">Código</label>
+                                            <label for="securitycode">{{ __('CVV') }}</label>
                                             <input id="securitycode" type="text"  inputmode="numeric">
                                         </div>
                                     </div>
@@ -192,7 +191,7 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <input type="submit" name="submit" value="Assinar por apenas US$ {{$price}}/mês" />
+                                    <input type="submit" name="submit" value="{{ __('Assinar por apenas US$') }} {{$price}}{{ __('/mês') }}" />
                                 </div>
                             </div>
                         </div>

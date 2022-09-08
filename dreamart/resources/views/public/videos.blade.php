@@ -64,8 +64,7 @@
             <div class="row bgcinza">
                 <div class="col-lg-12">
                     <div class="container">
-                        <p class="title">Vídeos</p>
-                        {{--<img src="/img/mockup-ordenarpor.png"/>--}}
+                        <p class="title">{{ __('Vídeos') }}</p>
                     </div>
                 </div>
             </div>

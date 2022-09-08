@@ -12,6 +12,8 @@ use App\Models\Setup;
 use App\Models\Taxonomy;
 use App\Models\Comment;
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\App;
+use Session;
 
 
 
@@ -24,6 +26,7 @@ class WebsiteController extends Controller
      */
     public function home()
     {       
+
 
         $podcasts = Podcast::
             join('users', 'users.id', '=', 'podcast.author')
@@ -275,6 +278,14 @@ class WebsiteController extends Controller
 
         return view('public.busca')->with('obj',$table)->with('term', $request->get('search'));
 
+    }
+
+    public function setLang(Request $request){
+        
+        App::setLocale($request->idioma);
+        Session::put('language', $request->idioma);
+        
+        return back();
     }
 
 }

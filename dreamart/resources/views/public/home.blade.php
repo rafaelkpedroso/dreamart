@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
  <div class="container-fluid">
 
   <section id="carousel1">
@@ -14,19 +16,17 @@
        <div class="container">
 
         <p class="title animate__animated animate__fadeInUp">
-         <span class="orange" > Dream Art Streaming.</span><br/>
-         Viva a arte do Jiu-jitsu do seu jeito.
+         <span class="orange" > {{ __('Dream Art Streaming') }}</span><br/>
+         {{ __('Viva a arte do Jiu-jitsu do seu jeito') }}
         </p>
 
         <p class="animate__animated animate__fadeInUp animate__slow">
-         Mais de 200 vídeos. Atualizações mensais para uma experiência única com aulas, <br/>
-         treinos, posições, perfis dos atletas e muito mais!<br/>
-         Aprenda com os melhores e mais criativos lutadores.
+          {!! trans('TXT01') !!}
         </p>
 
 
         <a href="/planos" class="btn btnorange animate__animated animate__fadeInUp animate__slower btnfaca">
-         Faça parte
+          {{ __('Faça parte') }}
         </a>
 
        </div>
@@ -54,7 +54,7 @@
      </ol>
    </div>
 
-   <div class="carousel-full-nav">
+   <div class="carousel-full-nav" style="display: none">
     <ol>
      <li class="active" data-slide="1"></li>
      {{--<li data-slide="2"></li>--}}

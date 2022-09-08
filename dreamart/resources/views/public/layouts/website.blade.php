@@ -50,7 +50,7 @@
                     <div class="col-lg-6 m-auto">
                         <div id="searchcontainer">
                             <form name="searchform" action="/busca/" method="get">
-                                <input type="text" name="search" id="search" placeholder="O que você está buscando?">
+                                <input type="text" name="search" id="search" placeholder="{{ __('O que você está buscando?') }}">
                                 <img src="/img/search-icon.png"  style="position: absolute;  left: 18px; top: 14px;"/>
                             </form>
                         </div>
@@ -64,13 +64,25 @@
                                     {{ Auth::user()->name  }}
                                 </div>
                             @else
-                                <a href="/login"  class="forcez">Entre</a> ou <a href="planos"  class="forcez">crie sua conta</a>
+                                <a href="/login"  class="forcez">{{ __('Entre') }}</a> {{ __('ou') }} <a href="planos"  class="forcez">{{ __('crie sua conta') }} </a>
                             @endif
 
                             
+                            <div class="localizator">
+
+                                <a href="/lang/pt_BR">
+                                    <img src="/img/brazil.png" alt="Versão em Português" class="langselector" />
+                                </a>
+                                <a href="/lang/en">
+                                    <img src="/img/usa.png" alt="Engilsh Version" class="langselector" />
+                                </a>
+                            </div>
+
                             <img src="/img/hamburguer-icon.png" id="hamburguer" style="margin-left: 20px"  class="forcez"/>
-                        
+
+                            
                         </div>
+
                     </div>
 
                 </div>
@@ -87,26 +99,26 @@
             <ul>
                 <li>
                     <a href="/">
-                        <img src="/img/icon-home.png" alt="Home" />
-                        Home
+                        <img src="/img/icon-home.png" alt="{{ __('Home') }}" />
+                        {{ __('Home') }}
                     </a>
                 </li>
                 <li>
                     <a href="/videos">
-                        <img src="/img/icon-videos.png" alt="Vídeos" />
-                        Vídeos
+                        <img src="/img/icon-videos.png" alt="{{ __('Vídeos') }}" />
+                        {{ __('Vídeos') }}
                     </a>
                 </li>
                 <li>
                     <a href="/lives">
-                        <img src="/img/icon-lives.png" alt="Lives" />
-                        Lives
+                        <img src="/img/icon-lives.png" alt="{{ __('Lives') }}" />
+                        {{ __('Lives') }}
                     </a>
                 </li>
                 <li>
                     <a href="/podcasts">
-                        <img src="/img/icon-podcast.png" alt="Podcasts" />
-                        Podcasts
+                        <img src="/img/icon-podcast.png" alt="{{ __('Podcasts') }}" />
+                        {{ __('Podcasts') }}
                     </a>
                 </li>
                 <!--li>
@@ -120,7 +132,7 @@
                     @if(Auth::user()->type == 'admin')
                         <li>
                             <a href="/admin">
-                                Administração
+                                {{ __('Painel de Controle') }}
                             </a>
                         </li>
                     @endif
@@ -128,7 +140,7 @@
 
                 <li>
                     <a href="/logout">
-                        Sair
+                        {{ __('Sair') }}
                     </a>
                 </li>
 
