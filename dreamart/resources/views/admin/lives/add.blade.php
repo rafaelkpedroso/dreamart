@@ -30,9 +30,15 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
-                                <label>{{ __('Título') }}</label>
+                                <label>{{ __('Título (pt_BR)') }}</label>
                                 <input type="text" name="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Título') }}"  required value="">
                                 @include('admin.alerts.feedback', ['field' => 'title'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('title_en') ? ' has-danger' : '' }}">
+                                <label>{{ __('Título (en)') }}</label>
+                                <input type="text" name="title_en" class="form-control{{ $errors->has('title_en') ? ' is-invalid' : '' }}" placeholder="{{ __('Title') }}"  required value="">
+                                @include('admin.alerts.feedback', ['field' => 'title_en'])
                             </div>
 
                             <div class="form-group{{ $errors->has('author') ? ' has-danger' : '' }}">

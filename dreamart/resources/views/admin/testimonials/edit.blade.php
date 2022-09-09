@@ -22,11 +22,20 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('testimonial') ? ' has-danger' : '' }}">
-                            <label>{{ __('Depoimento') }}</label>
+                            <label>{{ __('Depoimento (pt_BR)') }}</label>
                             <textarea id="testimonial" name="testimonial" class="form-control{{ $errors->has('testimonial') ? ' is-invalid' : '' }}" placeholder="Depoimento" required>{{$table->testimonial}}</textarea>
 
                             @include('admin.alerts.feedback', ['field' => 'testimonial'])
                         </div>
+
+                        <div class="form-group{{ $errors->has('testimonial') ? ' has-danger' : '' }}">
+                            <label>{{ __('Depoimento (en)') }}</label>
+                            <textarea id="testimonial_en" name="testimonial_en" class="form-control{{ $errors->has('testimonial_en') ? ' is-invalid' : '' }}" placeholder="Testimonial" required>{{$table->testimonial_en}}</textarea>
+
+                            @include('admin.alerts.feedback', ['field' => 'testimonial'])
+                        </div>
+
+
 
                         <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
                             <label>{{ __('Imagem') }}</label><br/>

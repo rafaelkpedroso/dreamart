@@ -1,4 +1,4 @@
- @extends('admin.layouts.app', ['page' => __('Editar Conteúdo'), 'pageSlug' => 'Configuração'])
+ @extends('admin.layouts.app', ['page' => __('Editar FAQ'), 'pageSlug' => 'faq'])
 
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Editar Configuração') }}</h5>
                 </div>
-                <form method="post" action="/admin/cms/update/{{ $table->id }}" autocomplete="off">
+                <form method="post" action="/admin/faq/update/{{ $table->id }}" autocomplete="off">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -52,7 +52,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <a class="cancelar" href="/admin/cms" style="">Cancelar</a>
+                        <a class="cancelar" href="/admin/faq" style="">Cancelar</a>
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Salvar') }}</button>
                     </div>
                 </form>

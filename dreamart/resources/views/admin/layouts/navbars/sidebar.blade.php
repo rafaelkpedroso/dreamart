@@ -83,6 +83,12 @@
                     <p>CMS</p>
                 </a>
             </li>
+            <li @if ($pageSlug == 'faq') class="active " @endif>
+                <a href="{{ route('faq.index') }}">
+                    <i class="tim-icons icon-bullet-list-67"></i>
+                    <p>FAQ</p>
+                </a>
+            </li>
             <li @if ($pageSlug == 'setup') class="active " @endif>
                 <a href="{{ route('setup.index') }}">
                     <i class="tim-icons icon-atom"></i>

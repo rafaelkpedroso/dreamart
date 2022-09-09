@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Podcast extends Model
+class Faq extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'podcast';
+    protected $table = 'faq';
 
     /**
      * The primary key associated with the table.
@@ -24,5 +24,5 @@ class Podcast extends Model
     /**
      * @var array
      */
-    protected $fillable = ['slug', 'title', 'title_en', 'author', 'url','views','rating','taxonomy'];
+    protected $fillable = ['title', 'title_en','text','text_en'];
 }

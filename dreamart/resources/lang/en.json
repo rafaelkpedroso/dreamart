@@ -49,8 +49,8 @@
     "Nome Sobrenome" : "Name Last name",
     "NOME SOBRENOME" : "NAME LAST NAME",
     "Usuário e/ou senha inválidos" : "Invalid user and/or password",
-    "DEIXE SEU COMENTÁRIO" : "LEAVE YOUR COMMENT",
-    "PARA VER NA SEQUÊNCIA" : "TO WATCH LATER",
+    "Deixe seu comentário" : "Leave your comment",
+    "Para ver na sequência" : "To watch later",
     "Comentar" : "Comment",
     "moderar" : "Moderate",
     "RESPONDER" : "Reply",
@@ -58,10 +58,23 @@
     "Deletar" : "Delete",
     "Esta ação não pode ser revertida. Deseja prosseguir?" : "This action is irreversible. Do you want to proceed?",
     "Busca por" : "Search for",
+    "Perguntas Frequentes" : "Frequent Asked Questions",
 
     "Dream Art Streaming" : "Dream Art Streaming.",
     "Viva a arte do Jiu-jitsu do seu jeito" : "Live jiu-jitsu on your own way",
     "TXT01" : "More than 200 videos. Monthly updates for a unique experience with classes, <br/> workouts, positions, athlete profiles and more!<br/> Learn from the best and most creative fighters.",
-    "Faça parte" : "Join us"
+    "Faça parte" : "Join us",
+
+    "Conheça o time" : "Know the team",
+    "Treinos e Competições" : "Trainig and competitions",
+    "TXT02" : "200+ NARRATED VIDEOS FOR YOU TO WATCH FROM YOUR HOME AS MANY TIMES YOU WANT.",
+    "Técnicas de Jiu-jitsu" : "Jiu-jitsu techniques",
+    "TXT03" : "CONTENTS WITH ENGLISH SUBTITLES AND TECHNICAL SUBTITLES",
+    "Categorização" : "Categorization",
+    "TXT04" : "EASILY FIND THE CONTENT YOU'RE LOOKING FOR. VIDEOS CATEGORIZED BY ATHLETES OR TECHNIQUES",
+    "Mentalidade de Competição" : "Competition mentality",
+    "TXT05" : "OPPORTUNITY TO OBSERVE THE MINDSET OF OUR CHAMPIONS",
+    "Qualidade" : "Quality",
+    "TXT06" : "HIGH RESOLUTION VIDEOS DEVELOPED BY PROFESSIONAL TEACHERS AND ATHLETES"
 
 }

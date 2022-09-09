@@ -771,9 +771,10 @@ textarea{
 }
 
 .depo-avatar{
-    width: 204px;
-    height:204px;
-    border-radius: 200px;
+    max-width: 204px;
+    max-height: 204px;
+    border-radius: 800px;
+    height: auto;
 }
 
 .btnfaca{

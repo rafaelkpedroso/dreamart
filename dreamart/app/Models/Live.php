@@ -24,5 +24,5 @@ class Live extends Model
     /**
      * @var array
      */
-    protected $fillable = ['slug', 'title', 'author', 'url','views','rating','taxonomy'];
+    protected $fillable = ['slug', 'title', 'title_en', 'author', 'url','views','rating','taxonomy'];
 }

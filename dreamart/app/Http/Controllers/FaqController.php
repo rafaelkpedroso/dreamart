@@ -2,33 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Testimonial;
-use App\Models\Taxonomy;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 use PhpParser\Node\Expr\Cast\Object_;
 
-class TestimonialController extends Controller
+class FaqController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function play(Request $request, $pSlug)
-    {
-
-        $testimonial = Testimonial::where('slug', $pSlug)->first();
-        if(!$testimonial->count()){
-            return view('public.404');
-        }
-
-        $data['url'] = $testimonial->url;
-
-        return view('public.testimonial.play', $data);
-    }
 
 
     /**
@@ -39,7 +19,7 @@ class TestimonialController extends Controller
     public function index(Request $request)
     {
 
-        $table = new Testimonial();
+        $table = new Faq();
 
         // busca
         if($request->get('busca')){
@@ -62,7 +42,7 @@ class TestimonialController extends Controller
         $dataSet = $table->skip($skip)->take($rowsPerPage)->get();
 
         $tablevars['sortable'] = 'title';
-        return view('admin.testimonials.index', ['data' => $dataSet,
+        return view('admin.faq.index', ['data' => $dataSet,
             'searchterm' => $request->get('busca'),
             'column' => $request->get('column'),
             'order' => $request->get('order'),
@@ -81,10 +61,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        $authors = User::get();
-        $taxonomies = Taxonomy::get();
-
-        return view('admin.testimonials.add', ['authors' => $authors, 'taxonomies' => $taxonomies]);
+        return view('admin.faq.add');
     }
 
     /**
@@ -95,20 +72,14 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-//        print_r($request->post()); die();
-        $testimonial = new Testimonial();
-        $testimonial->name = $request->post('name');
-        $testimonial->testimonial = $request->post('testimonial');
-        $testimonial->testimonial_en = $request->post('testimonial_en');
-        $testimonial->save();
+        $table = new Faq();
+        $table->title = $request->post('title');
+        $table->title_en = $request->post('title_en');
+        $table->text = $request->post('text');
+        $table->text_en = $request->post('text_en');
+        $table->save();
 
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('img/testimonials'), $imageName);
-
-        $testimonial->image = $imageName;
-        $testimonial->save();
-
-        return redirect('/admin/testimonials');
+        return redirect('/admin/faq');
     }
 
     /**
@@ -130,11 +101,9 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        $table = Testimonial::find($id);
-        $authors = User::get();
-        $taxonomies = Taxonomy::get();
+        $table = Faq::find($id);
 
-        return view('admin.testimonials.edit', ['table' => $table, 'authors' => $authors, 'taxonomies' => $taxonomies]);
+        return view('admin.faq.edit', ['table' => $table]);
     }
 
     /**
@@ -146,20 +115,13 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $testimonial = Testimonial::find($id);
-        $testimonial->name = $request->post('name');
-        $testimonial->testimonial = $request->post('testimonial');
-        $testimonial->testimonial_en = $request->post('testimonial_en');
-        $testimonial->update();
-
-        if($request->image){
-            $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('img/testimonials'), $imageName);
-            $testimonial->image = $imageName;
-            $testimonial->update();
-        }
-
-        return redirect('/admin/testimonials');
+        $table = Faq::find($id);
+        $table->title = $request->post('title');
+        $table->title_en = $request->post('title_en');
+        $table->text = $request->post('text');
+        $table->text_en = $request->post('text_en');
+        $table->update();
+        return redirect('/admin/faq');
 
     }
 
@@ -171,8 +133,8 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        Testimonial::destroy($id);
-        return redirect('/admin/testimonials');
+        Faq::destroy($id);
+        return redirect('/admin/faq');
 
     }
 }

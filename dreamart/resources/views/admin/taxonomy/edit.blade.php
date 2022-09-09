@@ -38,6 +38,12 @@
                                 @include('admin.alerts.feedback', ['field' => 'name'])
                             </div>
 
+                            <div class="form-group{{ $errors->has('name_en') ? ' has-danger' : '' }}">
+                                <label>Nome (en)</label>
+                                <input type="text" name="name_en" class="form-control{{ $errors->has('name_en') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name_en', $taxonomy->name_en) }}" required>
+                                @include('admin.alerts.feedback', ['field' => 'name_en'])
+                            </div>
+
                             <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">
                                 <label>{{ __('Slug') }}</label>
                                 <input type="slug" name="slug" class="form-control{{ $errors->has('slug') ? ' is-invalid' : '' }}" placeholder="{{ __('Slug') }}" value="{{ old('slug', $taxonomy->slug) }}" required>

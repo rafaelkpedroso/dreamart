@@ -33,9 +33,15 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                <label>{{ __('Nome') }}</label>
+                                <label>Nome (pt_BR)</label>
                                 <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}" required>
                                 @include('admin.alerts.feedback', ['field' => 'name'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('name_en') ? ' has-danger' : '' }}">
+                                <label>Nome (en)</label>
+                                <input type="text" name="name_en" class="form-control{{ $errors->has('name_en') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" required>
+                                @include('admin.alerts.feedback', ['field' => 'name_en'])
                             </div>
 
                             <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">

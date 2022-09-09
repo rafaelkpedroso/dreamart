@@ -13,6 +13,7 @@ use App\Models\Taxonomy;
 use App\Models\Comment;
 use App\Models\Testimonial;
 use App\Models\Cms;
+use App\Models\Faq;
 use Illuminate\Support\Facades\App;
 use Session;
 
@@ -28,6 +29,7 @@ class WebsiteController extends Controller
     public function home()
     {       
 
+        $faq = $this->getFaqs();
 
         $podcasts = Podcast::
             join('users', 'users.id', '=', 'podcast.author')
@@ -35,10 +37,11 @@ class WebsiteController extends Controller
             ->limit(5)
             ->get();
 
-        $depoimentos = Testimonial::limit(5)
-            ->get();
-
+        $depoimentos = $this->getTestimonials();
+        
+        
         return view('public.home')
+            ->with('faqs',$faq)
             ->with('depoimentos',$depoimentos)
             ->with('podcasts',$podcasts);
     }
@@ -65,7 +68,10 @@ class WebsiteController extends Controller
      */
     public function faq()
     {
-        return view('public.faq');
+        $faq = $this->getFaqs();
+
+        return view('public.faq')
+        ->with('faqs',$faq);
     }
 
     public function legal()
@@ -110,7 +116,7 @@ class WebsiteController extends Controller
 
             $videos = Video::where('taxonomy', '=', $cat->slug)
                     ->join('users', 'users.id', '=', 'video.author')
-                    ->select('video.id','video.title', 'video.image','video.rating','users.name')
+                    ->select('video.id','video.title','video.title_en', 'video.image','video.rating','users.name')
                     ->get();
 
             $subcats = Taxonomy::where('father', '=', $cat->slug)->get();
@@ -123,19 +129,19 @@ class WebsiteController extends Controller
                 $videos2 = null;
                 $videos2 = Video::where('taxonomy', '=', $subcat->slug)
                     ->join('users', 'users.id', '=', 'video.author')
-                    ->select('video.id','video.title', 'video.image','video.rating','users.name')
+                    ->select('video.id','video.title','video.title_en', 'video.image','video.rating','users.name')
                     ->get();
 
                 $objfilho[] = array(
                     'slug' => $subcat->slug,
-                    'name' => $subcat->name,
+                    'name' => ( Session::get('language')=='pt_BR') ? $subcat->name : ($subcat->name_en ? $subcat->name_en : $subcat->name),
                     'videos' => $videos2
                 );
             }
 
             $obj[] = array(
               'slug' => $cat->slug,
-              'name' => $cat->name,
+              'name' => ( Session::get('language')=='pt_BR') ? $cat->name : ($cat->name_en ? $cat->name_en : $cat->name),
               'videos' => $videos,
               'categories' => $objfilho
             );
@@ -194,14 +200,14 @@ class WebsiteController extends Controller
 
                 $objfilho[] = array(
                     'slug' => $subcat->slug,
-                    'name' => $subcat->name,
+                    'name' => ( Session::get('language')=='pt_BR') ? $subcat->name : ($subcat->name_en ? $subcat->name_en : $subcat->name),
                     'videos' => $podcasts2
                 );
             }
 
             $obj[] = array(
                 'slug' => $cat->slug,
-                'name' => $cat->name,
+                'name' => ( Session::get('language')=='pt_BR') ? $cat->name : ($cat->name_en ? $cat->name_en : $cat->name),
                 'videos' => $podcasts,
                 'categories' => $objfilho
             );
@@ -319,6 +325,58 @@ class WebsiteController extends Controller
         }
 
         return $output;
+    }
+    
+    private function getFaqs(){
+
+        $output = array();
+
+        if(Session::get('language')=='pt_BR'){
+            foreach(Faq::all() as $data){
+                $output[] = array(
+                    'title' => $data->title,
+                    'text' => $data->text
+                );
+            }
+        }else {
+            foreach(Faq::all() as $data){
+                $output[] = array(
+                    'title' => $data->title_en,
+                    'text' => $data->text_en
+                );
+            }
+        }
+
+        return $output;
+    }
+
+    private function getTestimonials(){
+
+        $output = array();
+
+        if(Session::get('language')=='pt_BR'){
+            foreach(Testimonial::all() as $data){
+                $output[] = array(
+                    'id' => $data->id,
+                    'name' => $data->name,
+                    'image' => $data->image,
+                    'testimonial' => $data->testimonial
+                );
+            }
+        }else {
+            foreach(Testimonial::all() as $data){
+                $output[] = array( 
+                    'id' => $data->id,
+                    'name' => $data->name,
+                    'image' => $data->image,
+                    'testimonial' => $data->testimonial_en
+                );
+            }
+        }
+
+        
+        $obj = (Object) $output;
+        return $obj;
     }
 
 }

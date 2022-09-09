@@ -32,5 +32,5 @@ class Taxonomy extends Model
     /**
      * @var array
      */
-    protected $fillable = ['slug', 'father', 'name'];
+    protected $fillable = ['slug', 'father', 'name', 'name_en'];
 }

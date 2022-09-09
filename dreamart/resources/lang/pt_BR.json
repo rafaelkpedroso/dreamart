@@ -49,8 +49,8 @@
     "Nome Sobrenome" : "Nome Sobrenome",
     "NOME SOBRENOME" : "NOME SOBRENOME",
     "Usuário e/ou senha inválidos" : "Usuário e/ou senha inválidos",
-    "DEIXE SEU COMENTÁRIO" : "DEIXE SEU COMENTÁRIO",
-    "PARA VER NA SEQUÊNCIA" : "PARA VER NA SEQUÊNCIA",
+    "Deixe seu comentário" : "Deixe seu comentário",
+    "Para ver na sequência" : "Para ver na sequência",
     "Comentar" : "Comentar",
     "moderar" : "moderar",
     "RESPONDER" : "RESPONDER",
@@ -58,10 +58,24 @@
     "Deletar" : "Deletar",
     "Esta ação não pode ser revertida. Deseja prosseguir?" : "Esta ação não pode ser revertida. Deseja prosseguir?",
     "Busca por" : "Busca por",
+    "Perguntas Frequentes" : "Perguntas Frequentes",
+    
 
     "Dream Art Streaming" : "Dream Art Streaming.",
     "Viva a arte do Jiu-jitsu do seu jeito" : "Viva a arte do Jiu-jitsu do seu jeito",
     "TXT01" : "Mais de 200 vídeos. Atualizações mensais para uma experiência única com aulas, \r\n treinos, posições, perfis dos atletas e muito mais!<br/> Aprenda com os melhores e mais criativos lutadores.",
-    "Faça parte" : "Faça parte"
+    "Faça parte" : "Faça parte",
+
+    "Conheça o time" : "Conheça o time",
+    "Treinos e Competições" : "Treinos e Competições",
+    "TXT02" : "MAIS DE 200 VÍDEOS NARRADOS PARA VOCÊ ASSISTIR  DA SUA CASA QUANTAS VEZES QUISER.",
+    "Técnicas de Jiu-jitsu" : "Técnicas de Jiu-jitsu",
+    "TXT03" : "CONTEÚDOS COM LEGENDA EM INGLÊS E LEGENDA TÉCNICA",
+    "Categorização" : "Categorização",
+    "TXT04" : "ENCONTRE FACILMENTE O CONTEÚDO QUE VOCÊ BUSCA. VÍDEOS CATEGORIZADOS POR ATLETAS OU POR TÉCNICAS",
+    "Mentalidade de Competição" : "Mentalidade de Competição",
+    "TXT05" : "OPORTUNIDADE DE OBSERVAR O MINDSET DOS NOSSOS CAMPEÕES",
+    "Qualidade" : "Qualidade",
+    "TXT06" : "VÍDEOS EM ALTA RESOLUÇÃO DESENVOLVIDOS POR PROFESSORES E ATLETAS PROFISSIONAIS"
     
 }

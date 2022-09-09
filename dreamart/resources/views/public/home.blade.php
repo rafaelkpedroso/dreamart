@@ -102,8 +102,7 @@
 
    <div class="container">
    <p class="title">
-     Conheça o time <br/>
-     Dream Art
+    {{ __('Conheça o time') }}
     </p>
 
     <div class="carousel-text">
@@ -112,42 +111,28 @@
      <div class="carousel-text-container">
       <ol>
        <li data-slide="1" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Treinos e Competições</p>
-        <p>
-         MAIS DE 200 VÍDEOS NARRADOS PARA VOCÊ ASSISTIR  DA SUA CASA QUANTAS VEZES QUISER.
-        </p>
+        <p class="orange title">{{ __('Treinos e Competições') }}</p>
+        <p>{{ __('TXT02') }} </p>
        </li>
 
        <li data-slide="2" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Técnicas de Jiu-jitsu</p>
-        </p>
-        CONTEÚDOS COM LEGENDA EM INGLÊS E LEGENDA TÉCNICA
-        </p>
+        <p class="orange title">{{ __('Técnicas de Jiu-jitsu') }}</p>
+        <p>{{ __('TXT03') }} </p>
        </li>
 
        <li data-slide="3" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Categorização</p>
-        </p>
-        ENCONTRE FACILMENTE O CONTEÚDO QUE VOCÊ BUSCA. VÍDEOS CATEGORIZADOS POR ATLETAS OU
-        POR GOLPES
-        </p>
+        <p class="orange title">{{ __('Categorização') }}</p>
+        <p>{{ __('TXT04') }} </p>
        </li>
 
        <li data-slide="4" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Mentalidade de Competição</p>
-        </p>
-        OPORTUNIDADE DE OBSERVAR O MINDSET DOS NOSSOS
-        CAMPEÕES
-        </p>
+        <p class="orange title">{{ __('Mentalidade de Competição') }}</p>
+        <p>{{ __('TXT05') }} </p>
        </li>
 
-
        <li data-slide="5" class="animate__animated animate__slower animate__fadeIn">
-        <p class="orange title">Qualidade</p>
-        </p>
-        VÍDEOS EM ALTA RESOLUÇÃO DESENVOLVIDOS POR PROFESSORES E ATLETAS
-        PROFISSIONAIS
-        </p>
+        <p class="orange title">{{ __('Qualidade') }}</p>
+        <p>{{ __('TXT06') }} </p>
        </li>
 
       </ol>
@@ -160,161 +145,23 @@
    </div>
   </section>
 
-  <section id="consultoria" style="display:none">
-
-   <div class="container consultoria-bg">
-
-    <div class="row">
-     <div class="col-lg-10  offset-lg-2">
-      <p class="title">Consultoria Dream Art</p>
-     </div>
-    </div>
-
-    <div class="row" style="margin-top:40px;">
-     <div class="col-lg-6 offset-lg-4">
-      <p>
-       Quem é atleta também pode contratar uma consultoria com o nosso time de profissionais.
-       Ela pode incluir:
-
-       <ul class="ulorange">
-        <li>
-         Auxílio a times de competição em variados formatos: montagem do plano de treinos, definição das técnicas a serem ensinadas, vídeo-aulas,
-         definição do plano de competições, análise individual dos atletas e mentoria.
-        </li>
-        <li>
-         Seminários personalizados com os atletas que você escolher.
-        </li>
-        <li>
-         Acompanhamento por consultoria online, incluindo preparação técnica, física, análise de vídeos de luta, programação de treino,
-         mental coaching e aulas particulares online.
-        </li>
-        <li>
-         Locação do espaço Dream Art para treino.
-        </li>
-      </ul>
-      </p>
-
-      <a href="/planos" class="button-secondary">
-       Valores dos Pacotes
-      </a>
-     </div>
-    </div>
-
-
-   </div>
-
-  </section>
-
-  <!--section id="como-funciona">
-
-   <div class="container">
-
-    <div class="row">
-     <div class="col-lg-12">
-      <p class="title">Como Funciona</p>
-      <p> Mais de 300 vídeos e cerca de 30 atualizações mensais com conteúdos diversos: vídeos de lutas, treinamentos, golpes e edições de podcast. </p>
-      <p>Com um valor acessível, você configura sua própria experiência na plataforma. Viva o Jiu-Jitsu de perto em uma experiência única!</p>
-     </div>
-    </div>
-
-    <div class="row" style="margin-top: 40px;">
-
-     <div class="col-lg-4 text-right">
-      <div class="como-funciona-icon-container">
-       <div class="row">
-        <div class="col-lg-4">
-         <img src="/img/icon-plano-ouro.png" />
-        </div>
-        <div class="col-lg-8 m-auto">
-         <p class="subtitle">Plano Ouro</p>
-         <p>R$ 169,00 por ano</p>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <div class="col-lg-4 text-right">
-      <div class="como-funciona-icon-container">
-       <div class="row">
-        <div class="col-lg-4">
-         <img src="/img/icon-plano-prata.png" />
-        </div>
-        <div class="col-lg-8 m-auto">
-         <p class="subtitle">Plano Prata</p>
-         <p>R$ 16,90 por mês</p>
-        </div>
-       </div>
-      </div>
-     </div>
-
-
-     <div class="col-lg-4 text-right">
-      <div class="como-funciona-icon-container">
-       <div class="row">
-        <div class="col-lg-4">
-         <img src="/img/icon-plano-bronze.png" />
-        </div>
-        <div class="col-lg-8 m-auto">
-         <p class="subtitle">Plano Bronze</p>
-         <p>R$ 19,90 por 1 mês</p>
-        </div>
-       </div>
-      </div>
-     </div>
-
-   </div>
-
-  </div>
-
-  </section-->
-
+  
   <section id="faq">
 
    <div class="container">
 
-    <p class="title">Perguntas Frequentes</p>
+    <p class="title">{{ __('Perguntas Frequentes') }}</p>
 
     <div class="row">
      <div class="col-lg-8">
 
       <ul class="dreamart-accordion">
-
+        @foreach($faqs as $faq)
        <li>
-        <p>Como faço para acessar minha assinatura?<i></i></p>
-        <span>Basta preencher seu login e senha no canto superior de todas as telas de www.drearttv.com </span>
+        <p>{{$faq['title']}}<i></i></p>
+        <span>{{$faq['text']}}</span>
        </li>
-       <li>
-        <p>Quero saber sobre cobranças e pagamentos<i></i></p>
-        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a> </span>
-       </li>
-       <li>
-        <p>Minha conta está suspensa por falta de pagamento. O que fazer?<i></i></p>
-        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a></span>
-       </li>
-       <li>
-        <p>Posso mudar o modo de pagamento de minhas contas?<i></i></p>
-        <span>Você poderá alterar os dados do cartão de crédito associado à sua conta em Meu perfil, após seu login.</span>
-       </li>
-
-       <li>
-        <p>Tive uma cobrança indevida. Como resolver? <i></i></p>
-        <span>Entre em contato <a href="mailto:financeiro@dreamarttv.com">financeiro@dreamarttv.com</a></span>
-       </li>
-
-       <li>
-        <p>Problemas de conexão <i></i></p>
-        <span>Procure conectar a outra fonte de internet. Geralmente acessos cabeados têm performance melhor do que internet wifi.</span>
-       </li>
-
-       <li>
-        <p>Minhas páginas estão travando <i></i></p>
-        <span>Procure conectar a outra fonte de internet. Geralmente acessos cabeados têm performance melhor do que internet wifi.</span>
-       </li>
-
-       <li>
-        <p>Como faço para mudar meu login e senha?<i></i></p>
-        <span>Você pode alterar seus dados acessando o Meu Perfil, após seu login.</span>
-       </li>
+        @endforeach
 
       </ul>
 
@@ -359,12 +206,12 @@
        <div class="carousel-depoimentos-container">
         <ol>
          @foreach($depoimentos as $depo)
-         <li data-slide="{{$depo->id}}">
-          <img src="/img/testimonials/{{$depo->image}}" class="depo-avatar">
+         <li data-slide="{{$depo['id']}}">
+          <img src="/img/testimonials/{{$depo['image']}}" class="depo-avatar">
 
           <div class="depoimento">
           <img class="depoimento-quote-left" src="/img/quote-left.png"/>
-           {{$depo->testimonial}}
+           {{$depo['testimonial']}}
            <img class="depoimento-quote-right" src="/img/quote-right.png"/>
           </div>
 
@@ -377,7 +224,7 @@
        <div class="carousel-depoimentos-nav">
         <ol>
          @foreach($depoimentos as $depo)
-          <li data-slide="{{$depo->id}}"></li>
+          <li data-slide="{{$depo['id']}}"></li>
           @endforeach
         </ol>
        </div>

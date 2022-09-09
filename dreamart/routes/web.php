@@ -137,6 +137,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/cms/edit/{id}', ['as' => 'cms.edit', 'uses' => 'App\Http\Controllers\CmsController@edit']);
     Route::put('/admin/cms/update/{id}', ['as' => 'cms.update', 'uses' => 'App\Http\Controllers\CmsController@update']);
 
+    Route::get('/admin/faq', ['as' => 'faq.index', 'uses' => 'App\Http\Controllers\FaqController@index']);
+    Route::get('/admin/faq/add', ['as' => 'faq.create', 'uses' => 'App\Http\Controllers\FaqController@create']);
+    Route::put('/admin/faq/store', ['as' => 'faq.store', 'uses' => 'App\Http\Controllers\FaqController@store']);
+    Route::get('/admin/faq/delete/{id}', ['as' => 'faq.delete', 'uses' => 'App\Http\Controllers\FaqController@destroy']);
+    Route::get('/admin/faq/edit/{id}', ['as' => 'faq.edit', 'uses' => 'App\Http\Controllers\FaqController@edit']);
+    Route::put('/admin/faq/update/{id}', ['as' => 'faq.update', 'uses' => 'App\Http\Controllers\FaqController@update']);
+
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
