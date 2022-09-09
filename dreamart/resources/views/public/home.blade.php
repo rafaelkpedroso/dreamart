@@ -173,7 +173,7 @@
     <div class="row">
 
      <div class="col-lg-8" id="ppd-container">
-      <p class="title text-center">PPD Casts</p>
+      <p class="title text-center">Podcasts</p>
 
       @foreach($podcasts as $podcast)
        <a href="/podcasts/{{$podcast->id}}">
@@ -199,7 +199,7 @@
      </div>
 
      <div class="col-lg-4">
-      <p class="title text-center">Depoimentos</p>
+      <p class="title text-center">{{ __('Depoimentos') }}</p>
 
       <div class="carousel-depoimentos">
 
